@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.desktopMenuListItem:hover {
+.desktopMenuListItem:hover, .listItem:hover {
     color: yellow;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid yellow;
@@ -38,6 +38,12 @@
     justify-content: center;
     padding: 0 1rem;
     border-radius: 2rem;
+    cursor: pointer;
+}
+
+.desktopMenuBtn:hover {
+    background: yellow;
+    color: rgb(74, 89, 96);
 }
 
 .desktopMenuImg {
@@ -45,4 +51,50 @@
     height: 1rem;
     width: 1rem;
     margin: 1rem;
+}
+
+.mobMenu{
+    display: none;
+    object-fit: cover;
+    height: 1.8rem;
+}
+
+.navMenu {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height:  fit-content;
+    min-width: 15rem;
+    background: rgb(51, 62, 67);
+    border-radius: 1rem;
+}
+
+.listItem {
+    color: white;
+    padding: 0.5rem 3rem;
+    margin: 0.25rem;
+    background: rgb(65, 54, 54);
+    cursor: pointer;
+}
+
+.active {
+    color: yellow;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow;
+}
+
+@media screen and (max-width:768px) {
+    .mobMenu{
+        display: flex;
+    }
+    .desktopMenu{
+        display: none;
+    }
+    .desktopMenuBtn{
+        display: none;
+    }
 }

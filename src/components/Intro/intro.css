@@ -42,6 +42,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
+
+  .btnImg {
+    object-fit: cover;
+    margin: 0 0.25rem;
+    height: 1rem;
+  }
   
   .hire-me-btn:hover {
     background: white;
