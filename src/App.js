@@ -1,3 +1,4 @@
+import AboutMe from "./components/About me/about";
 import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import Intro from "./components/Intro/intro";
@@ -8,9 +9,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Intro />
+      <AboutMe />
       <Contact />
       <Footer />
-      
     </div>
   );
 }

@@ -13,6 +13,8 @@
 .contactPageTitle{
     font-size: 3rem;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow;
 }
 
 .contactDesc{
