@@ -70,3 +70,9 @@
     width: 3rem;
     margin: 0 1rem;
 }
+
+@media (max-width: 768px) {
+    #contact{
+        margin-top: 65px;
+    }
+}
