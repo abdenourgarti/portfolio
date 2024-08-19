@@ -72,7 +72,17 @@
 }
 
 @media (max-width: 768px) {
-    #contact{
-        margin-top: 65px;
+    
+    .contactPageTitle{
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .contactPageTitle{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
 }

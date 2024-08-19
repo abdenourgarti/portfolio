@@ -16,12 +16,10 @@ const Navbar = () => {
           <Link activeClass='active' to='intro-section' spy={true} offset={-50} duration={500} className='desktopMenuListItem'>Portfolio</Link>
           <Link activeClass='active' to='intro-section' spy={true} offset={-50} duration={500} className='desktopMenuListItem'>Clients</Link>
         </div>
-        <button className='desktopMenuBtn' onClick={() => {
-          document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
-        }}>
+        <Link activeClass='activeBtn' to='contact' spy={true} offset={-50} duration={500} className='desktopMenuBtn'>
             <img src={contactImg} alt='contact' className='desktopMenuImg'/>
             Contact Me
-        </button>
+        </Link>
         <img src={menu} alt='menu' className='mobMenu' onClick={() => setShowMenu(!showMenu)}/>
         <div className='navMenu' style={{display: showMenu? 'flex' : 'none'}}>
           <Link activeClass='active' to='intro-section' spy={true} offset={-100} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Home</Link>

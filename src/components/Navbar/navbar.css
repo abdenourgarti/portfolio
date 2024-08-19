@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 
-.desktopMenuBtn:hover {
+.desktopMenuBtn:hover, .activeBtn {
     background: yellow;
     color: rgb(74, 89, 96);
 }
@@ -86,6 +86,8 @@
     padding-bottom: 0.5rem;
     border-bottom: 3px solid yellow;
 }
+
+
 
 @media screen and (max-width:768px) {
     .mobMenu{

@@ -1,146 +1,159 @@
 .intro-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    max-width: 75rem;
-    margin: 0 auto;
-    min-height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 5rem);
+}
+
+.intro-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.intro-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.intro-content h1 span {
+  color: yellow;
+}
+
+.intro-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hire-me-btn {
+  background: yellow;
+  color: black;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: blink 1s infinite;
+}
+
+.btnImg {
+  object-fit: cover;
+  margin: 0 0.25rem;
+  height: 1rem;
+}
+
+.hire-me-btn:hover {
+  background: white;
+  animation: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
   }
-  
-  .intro-content {
-    flex: 1;
-    max-width: 50%;
+  50% {
+    opacity: 0.5;
   }
-  
-  .intro-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+  100% {
+    opacity: 1;
   }
-  
-  .intro-content h1 span {
-    color: yellow;
+}
+
+.intro-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.intro-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: yellow;
+  z-index: -1;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.intro-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .intro-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
   }
-  
-  .intro-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .hire-me-btn {
-    background: yellow;
-    color: black;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1rem;
   }
 
-  .btnImg {
-    object-fit: cover;
-    margin: 0 0.25rem;
-    height: 1rem;
+  .intro-content, .intro-image-container {
+    max-width: 100%;
   }
-  
-  .hire-me-btn:hover {
-    background: white;
+
+  .intro-content h1 {
+    font-size: 2.5rem;
   }
-  
-  .intro-image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .intro-content h2 {
+    font-size: 1.5rem;
   }
-  
+
   .intro-image-wrapper {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
   }
-  
-  .intro-image-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: yellow;
-    z-index: -1;
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 480px) {
+  .intro-image-wrapper {
+    width: 150px;
+    height: 150px;
   }
-  
-  .intro-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+
+  .intro-content h1 {
+    font-size: 2rem;
   }
-  
-  @keyframes pulse {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.05);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
+
+  .intro-content h2 {
+    font-size: 1.2rem;
   }
-  
-  @media (max-width: 768px) {
-    .intro-section {
-      flex-direction: column-reverse;
-      text-align: center;
-      padding: 1rem;
-    }
-  
-    .intro-content, .intro-image-container {
-      max-width: 100%;
-    }
-  
-    .intro-content h1 {
-      font-size: 2.5rem;
-    }
-  
-    .intro-content h2 {
-      font-size: 1.5rem;
-    }
-  
-    .intro-image-wrapper {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 2rem;
-    }
-    
-  }
-  
-  @media (max-width: 480px) {
-    .intro-image-wrapper {
-      width: 150px;
-      height: 150px;
-    }
-  
-    .intro-content h1 {
-      font-size: 2rem;
-    }
-  
-    .intro-content h2 {
-      font-size: 1.2rem;
-    }
-  }
+}

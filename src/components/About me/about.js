@@ -17,29 +17,31 @@ const AboutMe = () => {
     });
 
     return (
-        <section id='about' className="about-me-section">
-            <h1 className="about-me-title">About Me</h1>
-            <div className="about-me-content">
-                <div className="about-me-image-container">
-                    <div className="about-me-image-wrapper">
-                        {images.map((img, index) => (
-                            <img
-                                key={index}
-                                src={img}
-                                alt={`Abdenour Garti ${index + 1}`}
-                                className={`about-me-image ${index === currentImage ? 'active' : ''}`}
-                            />
-                        ))}
+        <section id='about'>
+            <div className="about-me-section">
+                <h1 className="about-me-title">About Me</h1>
+                <div className="about-me-content">
+                    <div className="about-me-image-container">
+                        <div className="about-me-image-wrapper">
+                            {images.map((img, index) => (
+                                <img
+                                    key={index}
+                                    src={img}
+                                    alt={`Abdenour Garti ${index + 1}`}
+                                    className={`about-me-image ${index === currentImage ? 'active' : ''}`}
+                                />
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div className="about-me-text">
-                    <p>
-                        I am a dedicated and recently graduated software engineer with a focus on Full Stack web development. 
-                        I specialize in designing and developing innovative web platforms. Known for my quick learning ability, 
-                        reliability, and commitment to continuous improvement, I bring a serious and detail-oriented approach 
-                        to every project. With hands-on experience in various technologies, I am eager to contribute to 
-                        challenging projects and continue growing in a dynamic professional environment.
-                    </p>
+                    <div className="about-me-text">
+                        <p>
+                            I am a dedicated and recently graduated software engineer with a focus on Full Stack web development. 
+                            I specialize in designing and developing innovative web platforms. Known for my quick learning ability, 
+                            reliability, and commitment to continuous improvement, I bring a serious and detail-oriented approach 
+                            to every project. With hands-on experience in various technologies, I am eager to contribute to 
+                            challenging projects and continue growing in a dynamic professional environment.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
