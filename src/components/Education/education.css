@@ -1,0 +1,128 @@
+/* experience */
+#education{
+    margin-top: 4rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    height: auto;
+}
+#education h2{
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    display: block;
+    position: relative;
+}
+
+#education h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: yellow;
+  }
+.timeline{
+    padding: 30px 10px;
+    position: relative;
+}
+.timeline::before{
+    content: " ";
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 5px;
+    background-color: yellow;
+    left: 50%;
+    margin-left: -2.5px;
+}
+.timeline > li{/* > veut dire que li est enfant direct de timeline */
+    margin-bottom: 20px;
+    position: relative;
+}
+.timeline > li::before, .timeline > li:after{
+    content: " ";
+    display: table;
+}
+.timeline > li:after{
+    clear: both;
+}
+.timeline li .timeline-badge{
+    color: #333;
+    width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left: -25px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+.timeline-panel-container{
+    width: 50%;
+    float: left;
+}
+.timeline-panel-container-inverted{
+    width: 50%;
+    float: right;
+}
+.timeline-panel{
+    width: 90%;
+    float: right;
+    margin-right: 40px;
+    border: 1px solid #d4d4d4;
+    border-radius: 7px;
+    padding: 20px 25px;
+    position: relative;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    background-color: #fff;
+}
+.timeline-panel-container-inverted .timeline-panel{
+    float: left;
+    margin-left: 40px;
+}
+.timeline-panel::after{
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+}
+.timeline-panel-container-inverted .timeline-panel::after{
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto; 
+}
+.timeline-heading h3{
+    color: #555;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.timeline-heading h4{
+    color: #333;
+}
+
+.text-muted{
+    color: #666;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.timeline-body{
+    color: #555;
+}

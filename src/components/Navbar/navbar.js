@@ -14,7 +14,7 @@ const Navbar = () => {
           <Link activeClass='active' to='intro-section' spy={true} offset={-100} duration={500} className='desktopMenuListItem'>Home</Link>
           <Link activeClass='active' to='about' spy={true} offset={-50} duration={500} className='desktopMenuListItem'>About</Link>
           <Link activeClass='active' to='experience' spy={true} offset={-50} duration={500} className='desktopMenuListItem'>Experience</Link>
-          <Link activeClass='active' to='intro-section' spy={true} offset={-50} duration={500} className='desktopMenuListItem'>Clients</Link>
+          <Link activeClass='active' to='education' spy={true} offset={-50} duration={500} className='desktopMenuListItem'>Education</Link>
         </div>
         <Link activeClass='activeBtn' to='contact' spy={true} offset={-50} duration={500} className='desktopMenuBtn'>
             <img src={contactImg} alt='contact' className='desktopMenuImg'/>
@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link activeClass='active' to='intro-section' spy={true} offset={-100} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Home</Link>
           <Link activeClass='active' to='about' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>About</Link>
           <Link activeClass='active' to='experience' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Experience</Link>
-          <Link activeClass='active' to='intro-section' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Clients</Link>
+          <Link activeClass='active' to='education' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Education</Link>
           <Link activeClass='active' to='contact' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Contact</Link>
         </div>
 
