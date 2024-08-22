@@ -15,8 +15,8 @@ const Education = () => {
                         <div className="timeline-panel-container">
                             <div className="timeline-panel">
                                 <div className="timeline-heading">
-                                    <h3>Université -USTHB- Alger</h3>
-                                    <h4>Diplôme d'ingénieur informatique</h4>
+                                    <h3>Diplôme d'ingénieur informatique</h3>
+                                    <h4>Université -USTHB- Alger</h4>
                                     <p className="text-muted"><FaClock className='icon'/>2022-2024</p>
                                 </div>
                                 <div className="timeline-body">
@@ -30,8 +30,8 @@ const Education = () => {
                         <div className="timeline-panel-container-inverted">
                             <div className="timeline-panel">
                                 <div className="timeline-heading">
-                                    <h3>Université -USTHB- Alger</h3>
-                                    <h4>Diplôme de licence informatique</h4>
+                                    <h3>Diplôme de licence informatique</h3>
+                                    <h4>Université -USTHB- Alger</h4>
                                     <p className="text-muted"><FaClock className='icon'/>2019-2022</p>
                                 </div>
                                 <div className="timeline-body">
