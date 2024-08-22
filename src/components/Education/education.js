@@ -40,6 +40,21 @@ const Education = () => {
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <div className="timeline-badge"><FaBriefcase /></div>
+                        <div className="timeline-panel-container">
+                            <div className="timeline-panel">
+                                <div className="timeline-heading">
+                                    <h3>Diplôme de baccalauréat</h3>
+                                    <h4>Lycée Hamza - Bouira</h4>
+                                    <p className="text-muted"><FaClock className='icon'/>2018</p>
+                                </div>
+                                <div className="timeline-body">
+                                    <p>Série math technique, option génie civil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>

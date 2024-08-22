@@ -139,10 +139,61 @@
     }
 }
 
+@media (max-width: 640px){
+    .timeline-panel-container{
+        margin-left: 10px;
+    }
+    
+    .timeline-panel-container-inverted {
+        margin-right: 10px;
+    }
+
+    .timeline li .timeline-badge{
+        width: 30px;
+        line-height: 30px;
+        font-size: 10px;
+        top: 25px;
+        left: 52%;
+    }
+
+    .timeline-panel{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .timeline-heading h3{
+        font-size: 15px;
+    }
+    .timeline-heading h4{
+        font-size: 12px;
+    }
+    
+    .text-muted{
+        font-size: 10px;
+    }
+    
+    .timeline-body{
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 480px) {
-    .about-me-title {
+    #education h2 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
+    }
+
+    .timeline-panel-container{
+        margin-left: 15px;
+        margin-right: 2px;
+    }
+    
+    .timeline-panel-container-inverted {
+        margin-right: 15px;
+        margin-left: 2px;
+    }
+
+    .timeline li .timeline-badge{
+        left: 53%;
     }
 }
 
