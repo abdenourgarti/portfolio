@@ -1,5 +1,5 @@
 /* experience */
-#education{
+#education {
     margin-top: 4rem;
     max-width: 75rem;
     margin: 0 auto;
@@ -7,7 +7,8 @@
     height: auto;
     text-align: center;
 }
-#education h2{
+
+#education h2 {
     font-size: 3rem;
     text-align: center;
     color: white;
@@ -26,13 +27,15 @@
     width: 100%;
     height: 3px;
     background-color: yellow;
-  }
-.timeline{
+}
+
+.timeline {
     padding: 30px 10px;
     position: relative;
     list-style-type: none;
 }
-.timeline::before{
+
+.timeline::before {
     content: " ";
     top: 0;
     bottom: 0;
@@ -42,18 +45,22 @@
     left: 50%;
     margin-left: -2.5px;
 }
-.timeline > li{/* > veut dire que li est enfant direct de timeline */
+
+.timeline > li {
     margin-bottom: 20px;
     position: relative;
 }
-.timeline > li::before, .timeline > li:after{
+
+.timeline > li::before, .timeline > li:after {
     content: " ";
     display: table;
 }
-.timeline > li:after{
+
+.timeline > li:after {
     clear: both;
 }
-.timeline li .timeline-badge{
+
+.timeline li .timeline-badge {
     color: #333;
     width: 50px;
     line-height: 50px;
@@ -65,18 +72,26 @@
     margin-left: -25px;
     background-color: yellow;
     border-radius: 50%;
+    transition: transform 0.3s ease;
 }
-.timeline-panel-container{
+
+.timeline li:hover .timeline-badge {
+    transform: scale(1.1);
+}
+
+.timeline-panel-container {
     width: 50%;
     float: left;
     text-align: left;
 }
-.timeline-panel-container-inverted{
+
+.timeline-panel-container-inverted {
     width: 50%;
     float: right;
     text-align: left;
 }
-.timeline-panel{
+
+.timeline-panel {
     width: 90%;
     float: right;
     margin-right: 40px;
@@ -86,12 +101,27 @@
     position: relative;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
     background-color: yellow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.timeline-panel-container-inverted .timeline-panel{
+
+.timeline-panel-container-inverted .timeline-panel {
     float: left;
     margin-left: 40px;
 }
-.timeline-panel::after{
+
+.timeline-panel:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-panel-container .timeline-panel:hover {
+    transform: translateY(-5px) rotate(1deg);
+}
+
+.timeline-panel-container-inverted .timeline-panel:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+.timeline-panel::after {
     position: absolute;
     top: 27px;
     right: -14px;
@@ -102,45 +132,48 @@
     border-bottom: 14px solid transparent;
     content: " ";
 }
-.timeline-panel-container-inverted .timeline-panel::after{
+
+.timeline-panel-container-inverted .timeline-panel::after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
     right: auto; 
 }
-.timeline-heading h3{
+
+.timeline-heading h3 {
     color: #555;
     margin-top: 5px;
     font-size: 20px;
 }
-.timeline-heading h4{
+
+.timeline-heading h4 {
     color: #333;
 }
 
-.text-muted{
+.text-muted {
     color: #666;
     align-items: center;
     justify-content: center;
 }
 
-.icon{
+.icon {
     margin-right: 5px;
     margin-top: 5px;
 }
 
-.timeline-body{
+.timeline-body {
     color: #555;
 }
 
 @media (max-width: 768px) {
-    #education h2{
+    #education h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
     }
 }
 
-@media (max-width: 640px){
-    .timeline-panel-container{
+@media (max-width: 640px) {
+    .timeline-panel-container {
         margin-left: 10px;
     }
     
@@ -148,7 +181,7 @@
         margin-right: 10px;
     }
 
-    .timeline li .timeline-badge{
+    .timeline li .timeline-badge {
         width: 30px;
         line-height: 30px;
         font-size: 10px;
@@ -156,22 +189,24 @@
         left: 52%;
     }
 
-    .timeline-panel{
+    .timeline-panel {
         padding-left: 5px;
         padding-right: 5px;
     }
-    .timeline-heading h3{
+
+    .timeline-heading h3 {
         font-size: 15px;
     }
-    .timeline-heading h4{
+
+    .timeline-heading h4 {
         font-size: 12px;
     }
     
-    .text-muted{
+    .text-muted {
         font-size: 10px;
     }
     
-    .timeline-body{
+    .timeline-body {
         font-size: 12px;
     }
 }
@@ -182,7 +217,7 @@
         margin-bottom: 1rem;
     }
 
-    .timeline-panel-container{
+    .timeline-panel-container {
         margin-left: 15px;
         margin-right: 2px;
     }
@@ -192,8 +227,7 @@
         margin-left: 2px;
     }
 
-    .timeline li .timeline-badge{
+    .timeline li .timeline-badge {
         left: 53%;
     }
 }
-
