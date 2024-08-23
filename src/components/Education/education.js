@@ -1,63 +1,46 @@
 import React from 'react'
 import "./education.css"
-import { FaBriefcase, FaClock } from "react-icons/fa";
+import TimelineItem from './timelineItem';
+
+const educationData = [
+    {
+      title: "Computer Engineering Degree",
+      institution: "University of Science and Technology Houari Boumediene (USTHB) - Algiers",
+      period: "2022-2024",
+      description: "Specialization in Software Engineering"
+    },
+    {
+      title: "Bachelor's Degree in Computer Science",
+      institution: "University of Science and Technology Houari Boumediene (USTHB) - Algiers",
+      period: "2019-2022",
+      description: "Specialization in General Computer Science - ACAD"
+    },
+    {
+      title: "Baccalaureate Diploma",
+      institution: "Hamza High School - Bouira",
+      period: "2018",
+      description: "Technical Mathematics Series, Civil Engineering Option"
+    }
+  ];
 
 const Education = () => {
   return (
     <section id="education">
-            <div className="container">
-                <div className="divider white"></div>
-                <h2>Education</h2>
-                
-                <ul className="timeline">
-                    <li>
-                        <div className="timeline-badge"><FaBriefcase /></div>
-                        <div className="timeline-panel-container">
-                            <div className="timeline-panel">
-                                <div className="timeline-heading">
-                                    <h3>Diplôme d'ingénieur informatique</h3>
-                                    <h4>Université -USTHB- Alger</h4>
-                                    <p className="text-muted"><FaClock className='icon'/>2022-2024</p>
-                                </div>
-                                <div className="timeline-body">
-                                    <p>Spécialité ingénirié des logiciels</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="timeline-badge"><FaBriefcase /></div>
-                        <div className="timeline-panel-container-inverted">
-                            <div className="timeline-panel">
-                                <div className="timeline-heading">
-                                    <h3>Diplôme de licence informatique</h3>
-                                    <h4>Université -USTHB- Alger</h4>
-                                    <p className="text-muted"><FaClock className='icon'/>2019-2022</p>
-                                </div>
-                                <div className="timeline-body">
-                                    <p>Spécialité informatique générale - ACAD -</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="timeline-badge"><FaBriefcase /></div>
-                        <div className="timeline-panel-container">
-                            <div className="timeline-panel">
-                                <div className="timeline-heading">
-                                    <h3>Diplôme de baccalauréat</h3>
-                                    <h4>Lycée Hamza - Bouira</h4>
-                                    <p className="text-muted"><FaClock className='icon'/>2018</p>
-                                </div>
-                                <div className="timeline-body">
-                                    <p>Série math technique, option génie civil</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+      <div className="container">
+        <div className="divider white"></div>
+        <h2>Education</h2>
+        
+        <ul className="timeline">
+          {educationData.map((item, index) => (
+            <TimelineItem 
+              key={index} 
+              data={item} 
+              isInverted={index % 2 !== 0}
+            />
+          ))}
+        </ul>
+      </div>
+    </section>
   )
 }
 
