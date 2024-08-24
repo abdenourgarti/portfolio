@@ -6,6 +6,7 @@ import ExperienceSection from "./components/Expérience/ExperienceSection";
 import Footer from "./components/Footer/footer";
 import Intro from "./components/Intro/intro";
 import Navbar from "./components/Navbar/navbar";
+import Skills from "./components/Skills/skills";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <ExperienceSection />
       <Education />
       <CertificationSection />
+      <Skills />
       <Contact />
       <Footer />
     </div>
