@@ -1,4 +1,5 @@
 import AboutMe from "./components/About me/about";
+import CertificationSection from "./components/Certifications/CertificationSection";
 import Contact from "./components/Contact/contact";
 import Education from "./components/Education/education";
 import ExperienceSection from "./components/Expérience/ExperienceSection";
@@ -15,6 +16,7 @@ function App() {
       <AboutMe />
       <ExperienceSection />
       <Education />
+      <CertificationSection />
       <Contact />
       <Footer />
     </div>
