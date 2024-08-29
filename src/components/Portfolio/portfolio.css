@@ -1,0 +1,63 @@
+#portfolio{
+    max-width: 75rem;
+    margin: 50px auto;
+    min-height: 100vh;
+    height: auto;
+    padding: 2rem;
+    text-align: center;
+}
+#portfolio h2{
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+#portfolio h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: yellow;
+}
+
+.projets{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.projet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: calc(50% - 2rem);
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+#portfolio img{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+#portfolio img:hover{
+    border: 2px solid yellow;
+    filter: none;
+    -webkit-filter: none;
+}
+#portfolio .col-md-4{
+    margin-bottom: 20px;
+}

@@ -6,6 +6,7 @@ import ExperienceSection from "./components/Expérience/ExperienceSection";
 import Footer from "./components/Footer/footer";
 import Intro from "./components/Intro/intro";
 import Navbar from "./components/Navbar/navbar";
+import Portfolio from "./components/Portfolio/portfolio";
 import Skills from "./components/Skills/skills";
 
 
@@ -19,6 +20,7 @@ function App() {
       <Education />
       <CertificationSection />
       <Skills />
+      <Portfolio />
       <Contact />
       <Footer />
     </div>
