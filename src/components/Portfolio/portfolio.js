@@ -2,7 +2,7 @@ import React from 'react'
 import Serpent from '../../images/serpent.png'
 import Voyage from '../../images/voyage.png'
 import Articles from '../../images/actrices.png'
-import TaskManagment from '../../images/task managment (1).png'
+import TaskManagment from '../../images/task managment.png'
 import './portfolio.css'
 
 
@@ -18,12 +18,12 @@ const projects = [
         alt: 'Travel-agency'
     },
     {
-        lien: 'https://abdenourgarti.github.io/travel-agency/',
+        lien: 'https://abdenourgarti.github.io/serpent-game/',
         image: Serpent,
         alt: 'Serpent-game'
     },
     {
-        lien: 'https://abdenourgarti.github.io/travel-agency/',
+        lien: 'https://abdenourgarti.github.io/actrices/',
         image: Articles,
         alt: 'Top 5 actrices'
     },

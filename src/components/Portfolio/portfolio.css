@@ -61,3 +61,14 @@
 #portfolio .col-md-4{
     margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+    #portfolio h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .projet {
+      width: 100%;
+      max-width: 500px;
+    }
+  }

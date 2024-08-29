@@ -71,6 +71,11 @@
     margin: 0 1rem;
 }
 
+.link:hover{
+    height: 4rem;
+    width: 4rem;
+}
+
 @media (max-width: 768px) {
     
     .contactPageTitle{

@@ -14,3 +14,23 @@ body {
     overflow: hidden;
     overflow-y: scroll;
 }
+
+/* Styles pour la barre de défilement */
+::-webkit-scrollbar {
+    width: 5px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Fond transparent pour la piste */
+}
+
+::-webkit-scrollbar-thumb {
+    background: yellow; /* Couleur jaune pour la poignée */
+    border-radius: 5px; /* Coins arrondis pour la poignée */
+}
+
+/* Pour Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: yellow transparent;
+}
