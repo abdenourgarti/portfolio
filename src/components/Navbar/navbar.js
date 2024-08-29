@@ -3,6 +3,7 @@ import "./navbar.css"
 import logo from "../../images/logo.png"
 import contactImg from "../../images/contact.png"
 import menu from "../../images/menu.png"
+import Close from "../../images/close.png"
 import { Link } from 'react-scroll'
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
             <img src={contactImg} alt='contact' className='desktopMenuImg'/>
             Contact Me
         </Link>
-        <img src={menu} alt='menu' className='mobMenu' onClick={() => setShowMenu(!showMenu)}/>
+        <img src={showMenu ? Close : menu} alt='menu' className='mobMenu' onClick={() => setShowMenu(!showMenu)}/>
         <div className='navMenu' style={{display: showMenu? 'flex' : 'none'}}>
           <Link activeClass='active' to='intro-section' spy={true} offset={-100} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Home</Link>
           <Link activeClass='active' to='about' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>About</Link>
