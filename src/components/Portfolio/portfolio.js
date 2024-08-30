@@ -3,6 +3,8 @@ import Serpent from '../../images/serpent.png'
 import Voyage from '../../images/voyage.png'
 import Articles from '../../images/actrices.png'
 import TaskManagment from '../../images/task managment.png'
+import FootApp from '../../images/foot-app.png'
+import BurgerMenu from '../../images/burger-menu.png'
 import './portfolio.css'
 
 
@@ -11,6 +13,11 @@ const projects = [
         lien: 'https://front-pfe-master.vercel.app/',
         image: TaskManagment,
         alt: 'Task-managment-platforme'
+    },
+    {
+        lien: 'http://burger-menu.rf.gd/',
+        image: BurgerMenu,
+        alt: 'Burger menu'
     },
     {
         lien: 'https://abdenourgarti.github.io/travel-agency/',
@@ -26,6 +33,11 @@ const projects = [
         lien: 'https://abdenourgarti.github.io/actrices/',
         image: Articles,
         alt: 'Top 5 actrices'
+    },
+    {
+        lien: 'https://abdenourgarti.github.io/foot-app/',
+        image: FootApp,
+        alt: 'Foot app'
     },
 
 ]
