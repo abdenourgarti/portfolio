@@ -34,12 +34,6 @@ const projects = [
         image: Articles,
         alt: 'Top 5 actrices'
     },
-    {
-        lien: 'https://abdenourgarti.github.io/foot-app/',
-        image: FootApp,
-        alt: 'Foot app'
-    },
-
 ]
 
 const Project = ({lien, image, alt}) => {
