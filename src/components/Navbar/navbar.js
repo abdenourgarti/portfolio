@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link activeClass='active' to='education' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Education</Link>
           <Link activeClass='active' to='formation' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Formations</Link>
           <Link activeClass='active' to='skills' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Skills</Link>
-          <Link activeClass='active' to='portfolio' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Portfolio</Link>
+          <Link activeClass='active' to='portfolio' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Projects</Link>
         </div>
         <Link activeClass='activeBtn' to='contact' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuBtn'>
             <img src={contactImg} alt='contact' className='desktopMenuImg'/>
@@ -32,7 +32,7 @@ const Navbar = () => {
           <Link activeClass='active' to='education' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Education</Link>
           <Link activeClass='active' to='formation' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Formations</Link>
           <Link activeClass='active' to='skills' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Skills</Link>
-          <Link activeClass='active' to='portfolio' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Portfolio</Link>
+          <Link activeClass='active' to='portfolio' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Projects</Link>
           <Link activeClass='active' to='contact' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Contact</Link>
         </div>
 
