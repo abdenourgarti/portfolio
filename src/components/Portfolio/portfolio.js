@@ -49,7 +49,7 @@ const Project = ({lien, image, alt}) => {
 const Portfolio = () => {
   return (
     <section id="portfolio">            
-        <h2>Portfolio</h2>
+        <h2>Projects</h2>
         <div className="projets">
             {projects.map((projet, index) => (
                 <Project key={index} lien={projet.lien} image={projet.image} alt={projet.alt}/>
