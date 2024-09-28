@@ -3,7 +3,8 @@ import Serpent from '../../images/serpent.png'
 import Voyage from '../../images/voyage.png'
 import Articles from '../../images/actrices.png'
 import TaskManagment from '../../images/task managment.png'
-import FootApp from '../../images/foot-app.png'
+import MarvelQuiz from '../../images/marvel-quiz.png'
+//import FootApp from '../../images/foot-app.png'
 import BurgerMenu from '../../images/burger-menu.png'
 import './portfolio.css'
 
@@ -13,6 +14,11 @@ const projects = [
         lien: 'https://front-pfe-master.vercel.app/',
         image: TaskManagment,
         alt: 'Task-managment-platforme'
+    },
+    {
+        lien: 'https://marvel-quiz-kappa.vercel.app/',
+        image: MarvelQuiz,
+        alt: 'Marvel-quiz'
     },
     {
         lien: 'http://burger-menu.rf.gd/',
