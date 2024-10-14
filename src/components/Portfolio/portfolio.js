@@ -11,7 +11,7 @@ import './portfolio.css'
 
 const projects = [
     {
-        lien: 'https://front-pfe-master.vercel.app/',
+        lien: 'https://pfe-master-front.vercel.app/',
         image: TaskManagment,
         alt: 'Task-managment-platforme'
     },
