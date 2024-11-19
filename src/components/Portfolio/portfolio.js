@@ -5,6 +5,7 @@ import Articles from '../../images/actrices.png'
 import TaskManagment from '../../images/task managment.png'
 import MarvelQuiz from '../../images/marvel-quiz.png'
 import NourAlQuraan from '../../images/nour-al-quran-academie.png'
+import EntretienMenager from '../../images/entretien-menager.png'
 //import FootApp from '../../images/foot-app.png'
 import BurgerMenu from '../../images/burger-menu.png'
 import './portfolio.css'
@@ -15,6 +16,11 @@ const projects = [
         lien: 'https://pfe-master-front.vercel.app/',
         image: TaskManagment,
         alt: 'Task-managment-platforme'
+    },
+    {
+        lien: 'https://entretien-menager.vercel.app/',
+        image: EntretienMenager,
+        alt: 'Entretien-Ménager'
     },
     {
         lien: 'https://nour-al-quran-academie.vercel.app/',
