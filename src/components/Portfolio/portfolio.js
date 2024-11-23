@@ -18,7 +18,7 @@ const projects = [
         alt: 'Task-managment-platforme'
     },
     {
-        lien: 'https://entretien-menager.vercel.app/',
+        lien: 'https://lieupropre.ca/',
         image: EntretienMenager,
         alt: 'Entretien-Ménager'
     },
