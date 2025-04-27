@@ -35,11 +35,11 @@ const AboutMe = () => {
                     </div>
                     <div className="about-me-text">
                         <p>
-                            I am a dedicated and recently graduated software engineer with a focus on Full Stack web development. 
-                            I specialize in designing and developing innovative web platforms. Known for my quick learning ability, 
-                            reliability, and commitment to continuous improvement, I bring a serious and detail-oriented approach 
-                            to every project. With hands-on experience in various technologies, I am eager to contribute to 
-                            challenging projects and continue growing in a dynamic professional environment.
+                        I am a software engineer currently working at M2I Services, while also operating as a freelance developer in both the Algerian and international markets. Specialized in Full Stack web development, I am dedicated to designing and creating modern, robust, and intuitive digital solutions that adhere to industry standards and best practices.
+
+                        As a recent graduate with a passion for web technologies, I stand out through my quick learning ability, seriousness, and reliability. I am constantly seeking new opportunities to expand my skills and tackle challenging technical problems, while adding value to the projects I work on.
+                        
+                        My goal is to create exceptional user experiences through high-performance and accessible web applications that perfectly meet the needs of clients and end users.
                         </p>
                     </div>
                 </div>

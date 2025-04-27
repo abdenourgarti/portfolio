@@ -1,4 +1,4 @@
-#portfolio{
+#portfolio {
     max-width: 75rem;
     margin: 50px auto;
     min-height: 100vh;
@@ -6,7 +6,8 @@
     padding: 2rem;
     text-align: center;
 }
-#portfolio h2{
+
+#portfolio h2 {
     font-size: 3rem;
     text-align: center;
     color: white;
@@ -27,14 +28,27 @@
     background-color: yellow;
 }
 
-.projets{
+/* Structure de la grille de projets */
+.portfolio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.projets {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    /* Pour s'assurer que les projets restent dans la mise en page souhaitée */
+    width: calc(100% - 100px); /* Espace pour les boutons */
+    max-width: 1200px;
 }
 
-.projet{
+.projet {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,29 +60,112 @@
     margin-bottom: 2rem;
 }
 
-#portfolio img{
+#portfolio img {
     border-radius: 8px;
     width: 100%;
     height: 100%;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
+    transition: filter 0.3s ease, border 0.3s ease;
 }
-#portfolio img:hover{
+
+#portfolio img:hover {
     border: 2px solid yellow;
     filter: none;
     -webkit-filter: none;
 }
-#portfolio .col-md-4{
-    margin-bottom: 20px;
+
+/* Styles de pagination */
+.pagination-btn {
+    background-color: transparent;
+    color: yellow;
+    border: 2px solid yellow;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    z-index: 2;
 }
 
+.pagination-btn:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.pagination-btn:focus {
+    outline: none;
+}
+
+/* Indicateurs de pagination */
+.pagination-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+    background-color: yellow;
+    transform: scale(1.2);
+}
+
+/* Responsive - petits écrans */
 @media (max-width: 768px) {
     #portfolio h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
+    
     .projet {
-      width: 100%;
-      max-width: 500px;
+        width: 100%;
+        max-width: 80%;
+        margin: 0 auto 1rem;
     }
-  }
+    
+    .projets {
+        gap: 1rem;
+    }
+
+    .portfolio-container {
+        padding: 0 10px;
+    }
+    
+    .pagination-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .prev-btn {
+        left: 0;
+    }
+    
+    .next-btn {
+        right: 0;
+    }
+}
+
+/* Responsive - tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projets {
+        gap: 1.5rem;
+    }
+    
+    .projet {
+        width: calc(50% - 1.5rem);
+    }
+}
