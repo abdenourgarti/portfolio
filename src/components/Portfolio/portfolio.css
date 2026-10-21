@@ -1,171 +1,164 @@
-#portfolio {
-    max-width: 75rem;
-    margin: 50px auto;
-    min-height: 100vh;
-    height: auto;
-    padding: 2rem;
-    text-align: center;
+.projects {
+  background: var(--white);
 }
 
-#portfolio h2 {
-    font-size: 3rem;
-    text-align: center;
-    color: white;
-    margin-bottom: 2rem;
-    padding-bottom: 0.5rem;
-    display: inline-block;
-    position: relative;
-    text-align: center;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: clamp(20px, 3vw, 32px);
 }
 
-#portfolio h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background-color: yellow;
+.project-grid > li {
+  display: flex;
 }
 
-/* Structure de la grille de projets */
-.portfolio-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    position: relative;
-    width: 100%;
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  transition: transform 0.6s var(--ease-out), box-shadow 0.3s, border-color 0.3s;
 }
 
-.projets {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    /* Pour s'assurer que les projets restent dans la mise en page souhaitée */
-    width: calc(100% - 100px); /* Espace pour les boutons */
-    max-width: 1200px;
+.project-card:hover,
+.project-card:focus-within {
+  border-color: rgba(31, 91, 255, 0.35);
+  box-shadow: var(--shadow-lg);
 }
 
-.projet {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: calc(50% - 2rem);
-    max-width: 500px;
-    margin-bottom: 2rem;
+/* The screenshot floats above the card when it tilts. */
+.project-browser {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border: 1px solid var(--line);
+  transform: translateZ(36px);
 }
 
-#portfolio img {
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: filter 0.3s ease, border 0.3s ease;
+.project-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding-inline: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
-#portfolio img:hover {
-    border: 2px solid yellow;
-    filter: none;
-    -webkit-filter: none;
+.project-bar i {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
 }
 
-/* Styles de pagination */
-.pagination-btn {
-    background-color: transparent;
-    color: yellow;
-    border: 2px solid yellow;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin: 0 15px;
-    transition: all 0.3s ease;
-    z-index: 2;
+.project-bar i:first-child {
+  background: var(--blue);
 }
 
-.pagination-btn:hover {
-    background-color: yellow;
-    color: black;
+.project-bar i:nth-child(2) {
+  background: var(--sky);
 }
 
-.pagination-btn:focus {
-    outline: none;
+.project-bar span {
+  min-width: 0;
+  margin-inline-start: 8px;
+  overflow: hidden;
+  color: var(--slate);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-/* Indicateurs de pagination */
-.pagination-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.project-shot {
+  position: relative;
+  overflow: hidden;
 }
 
-.pagination-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: white;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.project-shot img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.7s var(--ease-out);
 }
 
-.pagination-dot.active {
-    background-color: yellow;
-    transform: scale(1.2);
+.project-card:hover .project-shot img {
+  transform: scale(1.05);
 }
 
-/* Responsive - petits écrans */
-@media (max-width: 768px) {
-    #portfolio h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .projet {
-        width: 100%;
-        max-width: 80%;
-        margin: 0 auto 1rem;
-    }
-    
-    .projets {
-        gap: 1rem;
-    }
-
-    .portfolio-container {
-        padding: 0 10px;
-    }
-    
-    .pagination-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .prev-btn {
-        left: 0;
-    }
-    
-    .next-btn {
-        right: 0;
-    }
+.project-peek {
+  position: absolute;
+  inset: auto 12px 12px auto;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s var(--ease-out);
 }
 
-/* Responsive - tablettes */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .projets {
-        gap: 1.5rem;
-    }
-    
-    .projet {
-        width: calc(50% - 1.5rem);
-    }
+:root[dir='rtl'] .project-peek {
+  inset: auto auto 12px 12px;
+}
+
+.project-card:hover .project-peek,
+.project-card:focus-within .project-peek {
+  opacity: 1;
+  transform: none;
+}
+
+.project-info {
+  padding: 18px 10px 10px;
+}
+
+.project-info h3 {
+  font: 700 1.25rem / 1.25 var(--font-display);
+}
+
+/* The title button covers the whole card, so the card is one big target. */
+.project-link {
+  text-align: start;
+  font: inherit;
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+}
+
+.project-link:focus-visible {
+  outline: none;
+}
+
+.project-link:focus-visible::after {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.project-info p {
+  display: -webkit-box;
+  margin-top: 6px;
+  overflow: hidden;
+  color: var(--slate);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(32px, 5vw, 48px);
 }

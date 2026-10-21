@@ -1,106 +1,174 @@
-.navbar{
-    height: 5rem;
-    width: 100vw;
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 3;
+.nav {
+  position: fixed;
+  inset: 14px 0 auto;
+  z-index: 50;
+  pointer-events: none;
 }
 
-.logo{
-    object-fit: cover;
-    height: 7rem;
-    width: 8rem;
+.nav-bar,
+.nav-panel {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid rgba(220, 228, 239, 0.9);
+  box-shadow: var(--shadow-sm);
 }
 
-.desktopMenuListItem {
-    margin: 1rem;
-    cursor: pointer;
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding-inline: 10px 8px;
+  border-radius: 999px;
 }
 
-.desktopMenuListItem:hover, .listItem:hover {
-    color: yellow;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
+/* The logo file has wide margins and a tiny caption: crop to the G mark. */
+.nav-logo {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
-.desktopMenuBtn{
-    background: white;
-    color: black;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
-    border-radius: 2rem;
-    cursor: pointer;
+.nav-logo img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.9) translateY(12%);
 }
 
-.desktopMenuBtn:hover, .activeBtn {
-    background: yellow;
-    color: rgb(74, 89, 96);
+.nav-links {
+  display: flex;
+  gap: 2px;
+  margin-inline: auto;
 }
 
-.desktopMenuImg {
-    object-fit: cover;
-    height: 1rem;
-    width: 1rem;
-    margin: 1rem;
+.nav-links a,
+.nav-panel a {
+  display: block;
+  border-radius: 999px;
+  color: var(--slate);
+  font-weight: 500;
+  transition: color 0.2s, background-color 0.2s;
 }
 
-.mobMenu{
+.nav-links a {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-panel a:hover {
+  color: var(--ink);
+}
+
+.nav-links a[aria-current],
+.nav-panel a[aria-current] {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-cta {
+  min-height: 46px;
+  padding-block: 10px;
+  padding-inline: 20px;
+  box-shadow: none;
+}
+
+.lang-switch {
+  display: flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.lang-switch button {
+  min-width: 40px;
+  height: 36px;
+  padding-inline: 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate);
+  transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.lang-switch button:hover {
+  color: var(--ink);
+}
+
+.lang-switch button[aria-pressed='true'] {
+  background: var(--white);
+  color: var(--blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-switch button[lang='ar'] {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+.nav-panel {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  animation: panel-in 0.3s var(--ease-out);
+}
+
+.nav-panel a {
+  padding: 13px 18px;
+  font-size: 1.1rem;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .nav-links {
     display: none;
-    object-fit: cover;
-    height: 1.8rem;
-    cursor: pointer;
+  }
+
+  .nav-actions {
+    margin-inline-start: auto;
+  }
+
+  .nav-toggle {
+    display: grid;
+  }
 }
 
-.navMenu {
-    position: absolute;
-    top: 4rem;
-    right: 2rem;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    height:  fit-content;
-    min-width: 15rem;
-    background: rgb(51, 62, 67);
-    border-radius: 1rem;
+@media (min-width: 1081px) {
+  .nav-panel {
+    display: none;
+  }
 }
 
-.listItem {
-    color: white;
-    padding: 0.5rem 3rem;
-    margin: 0.25rem;
-    background: rgb(65, 54, 54);
-    cursor: pointer;
-}
-
-.active {
-    color: yellow;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
-}
-
-
-
-@media screen and (max-width:1045px) {
-    .navbar{
-        max-width: 75rem !important;
-    }
-    .mobMenu{
-        display: flex;
-    }
-    .desktopMenu{
-        display: none;
-    }
-    .desktopMenuBtn{
-        display: none;
-    }
+@media (max-width: 560px) {
+  .nav-cta {
+    display: none;
+  }
 }
