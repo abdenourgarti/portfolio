@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { HiOutlineMapPin } from 'react-icons/hi2';
-import aboutMeImage1 from '../../images/aboutme.jpg';
-import aboutMeImage2 from '../../images/aboutme2.jpg';
-import aboutMeImage3 from '../../images/aboutme3.jpg';
-import { useLang } from '../../i18n';
-import tilt from '../../tilt';
-import Reveal from '../Reveal';
-import './Aboutme.css';
+import React, { useEffect, useState } from "react";
+import { HiOutlineMapPin } from "react-icons/hi2";
+import aboutMeImage1 from "../../images/aboutme.jpeg";
+import aboutMeImage2 from "../../images/aboutme1.jpeg";
+import aboutMeImage3 from "../../images/aboutme2.jpeg";
+import { useLang } from "../../i18n";
+import tilt from "../../tilt";
+import Reveal from "../Reveal";
+import "./Aboutme.css";
 
 const images = [aboutMeImage1, aboutMeImage2, aboutMeImage3];
 
@@ -15,8 +15,11 @@ const AboutMe = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const id = setInterval(() => setCurrent((i) => (i + 1) % images.length), 3500);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(
+      () => setCurrent((i) => (i + 1) % images.length),
+      3500,
+    );
     return () => clearInterval(id);
   }, []);
 
@@ -31,8 +34,8 @@ const AboutMe = () => {
                 <img
                   key={img}
                   src={img}
-                  alt={index === current ? 'Abdenour Garti' : ''}
-                  className={index === current ? 'is-active' : ''}
+                  alt={index === current ? "Abdenour Garti" : ""}
+                  className={index === current ? "is-active" : ""}
                 />
               ))}
             </div>
