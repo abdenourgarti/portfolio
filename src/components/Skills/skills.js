@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLang } from '../../i18n';
+import { scrubIn, useGSAP } from '../../scroll';
 import Reveal from '../Reveal';
 import './Skills.css';
 
@@ -51,9 +52,15 @@ const skillGroups = [
 
 const Skills = () => {
   const { ui } = useLang();
+  const section = useRef(null);
+
+  // Cards swing in from alternate sides.
+  useGSAP(() => scrubIn('.skill-group', (i) => ({ autoAlpha: 0, y: 70, z: -120, rotateX: 12, rotateY: i % 2 ? -18 : 18 })), {
+    scope: section,
+  });
 
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section" ref={section}>
       <div className="container">
         <Reveal className="section-head">
           <h2>{ui.skills.title}</h2>
@@ -62,7 +69,7 @@ const Skills = () => {
 
         <div className="skill-groups">
           {skillGroups.map((group, i) => (
-            <Reveal key={group.key} className={`skill-group skill-group--${group.key}`} delay={i * 80}>
+            <div key={group.key} className={`skill-group skill-group--${group.key}`}>
               <h3>{ui.skills.cats[group.key]}</h3>
               <ul>
                 {group.skills.map((skill) => (
@@ -72,7 +79,7 @@ const Skills = () => {
                   </li>
                 ))}
               </ul>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>

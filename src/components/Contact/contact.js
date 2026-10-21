@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import { HiOutlineEnvelope } from 'react-icons/hi2';
 import { useLang } from '../../i18n';
-import Reveal from '../Reveal';
+import { scrubIn, useGSAP } from '../../scroll';
+import Phone from './Phone';
 import './contact.css';
 
 const EMAIL = 'garti.abdenour@gmail.com';
@@ -16,6 +17,10 @@ const socials = [
 const Contact = () => {
   const { ui } = useLang();
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const section = useRef(null);
+
+  // The panel tips up from below like a card being lifted.
+  useGSAP(() => scrubIn('.contact-panel', { y: 100, rotateX: 20, scale: 0.92, autoAlpha: 0.2 }), { scope: section });
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -37,9 +42,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section contact">
+    <section id="contact" className="section contact" ref={section}>
       <div className="container">
-        <Reveal className="contact-panel">
+        <div className="contact-panel">
           <div className="contact-intro">
             <h2>{ui.contact.title}</h2>
             <p>{ui.contact.lead}</p>
@@ -57,6 +62,8 @@ const Contact = () => {
               ))}
             </ul>
           </div>
+
+          <Phone />
 
           <form className="contact-form" onSubmit={sendEmail}>
             <label>
@@ -79,7 +86,7 @@ const Contact = () => {
               {status === 'error' && ui.contact.error}
             </p>
           </form>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

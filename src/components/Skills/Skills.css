@@ -48,6 +48,16 @@
   padding: 8px 10px 8px 16px;
 }
 
+.skill-group li {
+  transition: transform 0.25s var(--ease-out), border-color 0.2s, box-shadow 0.25s;
+}
+
+.skill-group li:hover {
+  border-color: rgba(31, 91, 255, 0.4);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px) scale(1.04);
+}
+
 .skill-group img {
   width: 28px;
   height: 28px;

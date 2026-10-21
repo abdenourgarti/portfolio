@@ -5,14 +5,23 @@
   list-style: none;
 }
 
-/* The timeline rail runs through the logos. */
-.xp-list::before {
+/* The timeline rail runs through the logos; its blue part grows with the scroll (--fill). */
+.xp-list::before,
+.xp-list::after {
   content: '';
   position: absolute;
   inset-block: 28px;
   inset-inline-start: 27px;
   width: 2px;
-  background: linear-gradient(var(--blue), var(--sky) 60%, var(--line));
+  background: var(--line);
+}
+
+.xp-list::after {
+  width: 3px;
+  margin-inline-start: -0.5px;
+  background: linear-gradient(var(--blue), var(--sky));
+  transform-origin: top;
+  scale: 1 var(--fill, 1);
 }
 
 .xp-item {
@@ -124,7 +133,8 @@
 }
 
 @media (max-width: 560px) {
-  .xp-list::before {
+  .xp-list::before,
+  .xp-list::after {
     display: none;
   }
 

@@ -8,13 +8,12 @@ import './education.css';
 const degrees = [
   {
     period: '2022 – 2024',
-    title: { fr: 'Diplôme en ingénierie informatique', en: 'Computer Engineering Degree', ar: 'شهادة في هندسة الإعلام الآلي' },
+    title: { fr: 'Master en ingénierie des logiciels', en: "Master's Degree in Software Engineering", ar: 'ماستر في هندسة البرمجيات' },
     school: {
       fr: 'Université des Sciences et de la Technologie Houari Boumediene (USTHB), Alger',
       en: 'University of Science and Technology Houari Boumediene (USTHB), Algiers',
       ar: 'جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)، الجزائر العاصمة',
     },
-    detail: { fr: 'Spécialité génie logiciel', en: 'Specialization in Software Engineering', ar: 'تخصص هندسة البرمجيات' },
   },
   {
     period: '2019 – 2022',
@@ -104,7 +103,7 @@ const Education = () => {
                 <li key={i}>
                   <p className="degree-period">{degree.period}</p>
                   <h4>{t(degree.title)}</h4>
-                  <p className="degree-detail">{t(degree.detail)}</p>
+                  {degree.detail && <p className="degree-detail">{t(degree.detail)}</p>}
                   <p className="degree-school">{t(degree.school)}</p>
                 </li>
               ))}

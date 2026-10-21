@@ -20,7 +20,7 @@
   mask-image: radial-gradient(ellipse 75% 65% at 60% 45%, #000 25%, transparent 75%);
 }
 
-/* Light pool behind the 3D ring. */
+/* Light pool behind the story stage. */
 .hero::after {
   content: '';
   position: absolute;
@@ -129,16 +129,6 @@
   position: relative;
 }
 
-.hero-canvas-wrap {
-  height: min(640px, 72svh);
-}
-
-.hero-hint {
-  text-align: center;
-  color: var(--slate);
-  font-size: 0.875rem;
-}
-
 /* One orchestrated entrance on load. */
 .hero-copy > * {
   animation: rise 0.9s var(--ease-out) both;
@@ -167,7 +157,7 @@
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(26px);
+    transform: perspective(900px) translateY(26px) rotateX(-35deg);
   }
 }
 
@@ -192,10 +182,6 @@
 
   .hero-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hero-canvas-wrap {
-    height: clamp(320px, 70vw, 480px);
   }
 
   .hero::after {

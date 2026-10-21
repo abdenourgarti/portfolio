@@ -161,16 +161,38 @@ ul {
   transform: translateY(-2px);
 }
 
+/* Content rises and tips up into place. Pivoting on the bottom edge sends the top away from
+   the viewer, so nothing grows wider than its box on the way in. */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  transform: perspective(1000px) translateY(36px) rotateX(14deg);
+  transform-origin: 50% 100%;
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
   transition-delay: var(--delay, 0ms);
 }
 
 .reveal.is-in {
   opacity: 1;
   transform: none;
+}
+
+/* Typing caret for text written by GSAP: shown while --caret is 1. */
+.typed::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-inline-start: 1px;
+  vertical-align: -0.18em;
+  background: currentColor;
+  opacity: var(--caret, 0);
+  animation: caret-blink 0.9s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    visibility: hidden;
+  }
 }
 
 .visually-hidden {
