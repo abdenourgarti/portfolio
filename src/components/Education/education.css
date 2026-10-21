@@ -13,9 +13,49 @@
   font: 700 1.25rem / 1.3 var(--font-display);
 }
 
+/* The "pipeline": a grey rail, a blue fill that follows the scroll (--fill) and a light pulse
+   travelling down it. */
 .degrees {
+  position: relative;
   list-style: none;
   border-inline-start: 2px solid var(--line);
+}
+
+.degrees::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: -2px;
+  width: 2px;
+  background: linear-gradient(var(--blue), var(--sky));
+  transform-origin: top;
+  scale: 1 var(--fill, 1);
+}
+
+.degrees::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline-start: -5px;
+  width: 8px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(transparent, var(--sky));
+  box-shadow: 0 6px 14px -2px var(--sky);
+  opacity: 0;
+  animation: pipeline 3.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes pipeline {
+  10%,
+  80% {
+    opacity: 1;
+  }
+  to {
+    top: calc(100% - 28px);
+    opacity: 0;
+  }
 }
 
 .degrees li {
@@ -38,6 +78,8 @@
   border-radius: 50%;
   background: var(--white);
   border: 3px solid var(--blue);
+  box-shadow: 0 0 0 calc(var(--lit, 1) * 6px) rgba(31, 91, 255, 0.14);
+  scale: var(--lit, 1);
 }
 
 .degree-period {
@@ -71,6 +113,14 @@
 
 .certs li + li {
   border-top: 1px solid var(--line);
+}
+
+.cert-icon {
+  transition: transform 0.35s var(--ease-out);
+}
+
+.cert:hover .cert-icon {
+  transform: rotate(-8deg) scale(1.08);
 }
 
 .cert {

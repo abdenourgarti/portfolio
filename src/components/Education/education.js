@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import { SiUdemy } from 'react-icons/si';
 import { useLang } from '../../i18n';
+import { gsap, reducedMotion, scrubIn, useGSAP } from '../../scroll';
 import Reveal from '../Reveal';
 import './education.css';
 
@@ -86,9 +87,35 @@ const LOCALES = { fr: 'fr-FR', en: 'en-GB', ar: 'ar-DZ' };
 const Education = () => {
   const { lang, ui, t } = useLang();
   const month = new Intl.DateTimeFormat(LOCALES[lang], { month: 'long', year: 'numeric' });
+  const section = useRef(null);
+
+  useGSAP(
+    () => {
+      const dir = lang === 'ar' ? -1 : 1;
+      scrubIn('.edu-subtitle', { autoAlpha: 0, rotateX: 60, y: 20 });
+      // Degree texts swing in from the rail, pivoting on their reading-start edge.
+      scrubIn('.degrees li > *', { autoAlpha: 0, x: -40 * dir, rotateY: 30 * dir, transformOrigin: dir > 0 ? '0% 50%' : '100% 50%' });
+      scrubIn('.certs li', { autoAlpha: 0, rotateX: 70, y: 24 });
+      if (reducedMotion) return;
+      // The rail fills as you scroll and each dot pops when the fill reaches it.
+      gsap.fromTo(
+        '.degrees',
+        { '--fill': 0 },
+        { '--fill': 1, ease: 'none', scrollTrigger: { trigger: '.degrees', start: 'top 75%', end: 'bottom 75%', scrub: true } }
+      );
+      gsap.utils.toArray('.degrees li').forEach((li) =>
+        gsap.fromTo(
+          li,
+          { '--lit': 0 },
+          { '--lit': 1, ease: 'back.out(3)', scrollTrigger: { trigger: li, start: 'top 76%', end: 'top 68%', scrub: 0.3 } }
+        )
+      );
+    },
+    { scope: section, dependencies: [lang], revertOnUpdate: true }
+  );
 
   return (
-    <section id="education" className="section education">
+    <section id="education" className="section education" ref={section}>
       <div className="container">
         <Reveal className="section-head">
           <h2>{ui.education.title}</h2>
@@ -96,7 +123,7 @@ const Education = () => {
         </Reveal>
 
         <div className="edu-grid">
-          <Reveal>
+          <div>
             <h3 className="edu-subtitle">{ui.education.degrees}</h3>
             <ol className="degrees">
               {degrees.map((degree, i) => (
@@ -108,9 +135,9 @@ const Education = () => {
                 </li>
               ))}
             </ol>
-          </Reveal>
+          </div>
 
-          <Reveal delay={120}>
+          <div>
             <h3 className="edu-subtitle">{ui.education.certs}</h3>
             <ul className="certs">
               {certifications.map((cert) => (
@@ -130,7 +157,7 @@ const Education = () => {
                 </li>
               ))}
             </ul>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>
