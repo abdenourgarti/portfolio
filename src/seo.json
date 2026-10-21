@@ -1,0 +1,37 @@
+{
+  "site": "https://abdenour-garti.vercel.app",
+  "name": "GARTI Abdenour",
+  "image": "/logo-garti--removebg-preview.png",
+  "twitter": "@GartiAbdenour",
+  "sameAs": [
+    "https://www.linkedin.com/in/abdenour-garti-19177b192/",
+    "https://github.com/abdenourgarti",
+    "https://x.com/GartiAbdenour"
+  ],
+  "langs": {
+    "fr": {
+      "path": "/",
+      "locale": "fr_FR",
+      "dir": "ltr",
+      "title": "GARTI Abdenour | Ingénieur logiciel Full Stack à Alger",
+      "description": "Portfolio de GARTI Abdenour, ingénieur logiciel Full Stack à Alger : applications web sur mesure avec Laravel, Vue.js, React, Next.js et Node.js. Disponible en freelance.",
+      "jobTitle": "Ingénieur logiciel Full Stack"
+    },
+    "en": {
+      "path": "/en",
+      "locale": "en_US",
+      "dir": "ltr",
+      "title": "GARTI Abdenour | Full Stack Software Engineer in Algiers",
+      "description": "Portfolio of GARTI Abdenour, Full Stack software engineer in Algiers: custom web applications built with Laravel, Vue.js, React, Next.js and Node.js. Available for freelance work.",
+      "jobTitle": "Full Stack Software Engineer"
+    },
+    "ar": {
+      "path": "/ar",
+      "locale": "ar_DZ",
+      "dir": "rtl",
+      "title": "GARTI Abdenour | مهندس برمجيات Full Stack في الجزائر العاصمة",
+      "description": "معرض أعمال GARTI Abdenour، مهندس برمجيات Full Stack في الجزائر العاصمة: تطوير تطبيقات ويب مخصصة باستخدام Laravel وVue.js وReact وNext.js وNode.js. متاح للعمل الحر.",
+      "jobTitle": "مهندس برمجيات Full Stack"
+    }
+  }
+}

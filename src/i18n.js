@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useLayoutEffect, useRef, useState } from 'react';
+import seo from './seo.json';
 
 export const LANGS = [
   { code: 'fr', short: 'FR', label: 'Français' },
@@ -307,13 +308,32 @@ const ui = {
 
 const LangContext = createContext(null);
 
+// Each language has its own URL (/, /en, /ar) so search engines index all three. A visitor landing
+// on / gets the language they picked last time; an explicit /en or /ar always wins.
+const langFromPath = () => {
+  const code = window.location.pathname.split('/')[1];
+  return code !== 'fr' && ui[code] ? code : null;
+};
+
 const initialLang = () => {
+  const fromPath = langFromPath();
+  if (fromPath) return fromPath;
   try {
     const saved = localStorage.getItem('lang');
     return ui[saved] ? saved : 'fr';
   } catch {
     return 'fr';
   }
+};
+
+// Keeps the URL and the head in step with the language picked in the app.
+const syncPage = (lang) => {
+  const page = seo.langs[lang];
+  const { pathname, search, hash } = window.location;
+  if (pathname !== page.path) window.history.replaceState(null, '', page.path + search + hash);
+  document.title = page.title;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', page.description);
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', seo.site + page.path);
 };
 
 // First text block fully visible under the fixed navbar: it is put back at the same
@@ -340,6 +360,7 @@ export function LangProvider({ children }) {
     const root = document.documentElement;
     root.lang = lang;
     root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    syncPage(lang);
     try {
       localStorage.setItem('lang', lang);
     } catch {}
