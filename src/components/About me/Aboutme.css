@@ -9,10 +9,23 @@
   gap: clamp(48px, 8vw, 110px);
 }
 
-/* The photos waiting behind can swing past the column: clip them at the page gutter. */
+/* The photos waiting behind can swing past the column: clip them inside the page gutter.
+   Plain lengths only: Chrome drops var() and clamp() in overflow-clip-margin (it would clip at 0). */
 .about-media {
   overflow: clip;
-  overflow-clip-margin: var(--gutter);
+  overflow-clip-margin: 16px;
+}
+
+@media (min-width: 1000px) {
+  .about-media {
+    overflow-clip-margin: 40px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .about-media {
+    overflow-clip-margin: 80px;
+  }
 }
 
 .about-frame {
@@ -66,7 +79,7 @@
 
 .about-badge {
   position: absolute;
-  inset-inline-start: -18px;
+  inset-inline-start: 0;
   bottom: 28px;
   display: flex;
   align-items: center;
@@ -134,7 +147,4 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .about-badge {
-    inset-inline-start: -10px;
-  }
 }
