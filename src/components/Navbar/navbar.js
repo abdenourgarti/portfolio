@@ -1,62 +1,103 @@
-import React, { useState, useEffect } from 'react'
-import "./navbar.css"
-import logo from "../../images/logo.png"
-import contactImg from "../../images/contact.png"
-import menu from "../../images/menu.png"
-import Close from "../../images/close.png"
-import { Link } from 'react-scroll'
+import React, { useEffect, useState } from 'react';
+import { HiBars3, HiXMark } from 'react-icons/hi2';
+import logo from '../../images/logo.png';
+import { LANGS, useLang } from '../../i18n';
+import './navbar.css';
+
+const LINKS = ['about', 'experience', 'education', 'skills', 'projects'];
+
+const LangSwitch = () => {
+  const { lang, setLang, ui } = useLang();
+  return (
+    <div className="lang-switch" role="group" aria-label={ui.language}>
+      {LANGS.map((l) => (
+        <button
+          key={l.code}
+          type="button"
+          lang={l.code}
+          title={l.label}
+          aria-pressed={lang === l.code}
+          onClick={() => setLang(l.code)}
+        >
+          <span aria-hidden="true">{l.short}</span>
+          <span className="visually-hidden">{l.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+};
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [showLogo, setShowLogo] = useState(true);
+  const { ui } = useLang();
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('home');
 
-  // Effet pour gérer le scroll
+  // Highlights the link of the section crossing the middle of the screen.
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowLogo(false);
-      } else {
-        setShowLogo(true);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && setActive(entry.target.id)),
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    ['home', ...LINKS, 'contact'].forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
+  const link = (id) => (
+    <a href={`#${id}`} aria-current={active === id ? 'true' : undefined} onClick={() => setOpen(false)}>
+      {ui.nav[id]}
+    </a>
+  );
+
   return (
-    <nav className='navbar'>
-        <div className='logo'>
-          {showLogo && <img src={logo} alt='logo' className='logo' />}
-        </div>
-        
-        <div className='desktopMenu'>
-          <Link activeClass='active' to='intro-section' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Home</Link>
-          <Link activeClass='active' to='about' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>About</Link>
-          <Link activeClass='active' to='experience' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Experience</Link>
-          <Link activeClass='active' to='education' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Education</Link>
-          <Link activeClass='active' to='formation' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Formations</Link>
-          <Link activeClass='active' to='skills' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Skills</Link>
-          <Link activeClass='active' to='portfolio' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuListItem'>Projects</Link>
-        </div>
-        <Link activeClass='activeBtn' to='contact' spy={true} smooth={true} offset={-70} duration={500} className='desktopMenuBtn'>
-            <img src={contactImg} alt='contact' className='desktopMenuImg'/>
-            Contact Me
-        </Link>
-        <img src={showMenu ? Close : menu} alt='menu' className='mobMenu' onClick={() => setShowMenu(!showMenu)}/>
-        <div className='navMenu' style={{display: showMenu? 'flex' : 'none'}}>
-          <Link activeClass='active' to='intro-section' spy={true} offset={-100} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Home</Link>
-          <Link activeClass='active' to='about' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>About</Link>
-          <Link activeClass='active' to='experience' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Experience</Link>
-          <Link activeClass='active' to='education' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Education</Link>
-          <Link activeClass='active' to='formation' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Formations</Link>
-          <Link activeClass='active' to='skills' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Skills</Link>
-          <Link activeClass='active' to='portfolio' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Projects</Link>
-          <Link activeClass='active' to='contact' spy={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Contact</Link>
-        </div>
+    <header className="nav">
+      <nav className="nav-bar container">
+        <a href="#home" className="nav-logo" onClick={() => setOpen(false)}>
+          <img src={logo} alt="Abdenour Garti" width="44" height="44" />
+        </a>
 
-    </nav>
-  )
-}
+        <ul className="nav-links">
+          {LINKS.map((id) => (
+            <li key={id}>{link(id)}</li>
+          ))}
+        </ul>
 
-export default Navbar
+        <div className="nav-actions">
+          <LangSwitch />
+          <a href="#contact" className="btn btn-primary nav-cta">
+            {ui.nav.contact}
+          </a>
+          <button
+            type="button"
+            className="nav-toggle"
+            aria-expanded={open}
+            aria-controls="nav-panel"
+            aria-label={open ? ui.menu.close : ui.menu.open}
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <HiXMark aria-hidden="true" /> : <HiBars3 aria-hidden="true" />}
+          </button>
+        </div>
+      </nav>
+
+      <div id="nav-panel" className="nav-panel container" hidden={!open}>
+        <ul>
+          {['home', ...LINKS, 'contact'].map((id) => (
+            <li key={id}>{link(id)}</li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;

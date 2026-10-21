@@ -1,51 +1,69 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { HiOutlineMapPin } from 'react-icons/hi2';
+import aboutMeImage1 from '../../images/aboutme.jpg';
+import aboutMeImage2 from '../../images/aboutme2.jpg';
+import aboutMeImage3 from '../../images/aboutme3.jpg';
+import { useLang } from '../../i18n';
+import tilt from '../../tilt';
+import Reveal from '../Reveal';
 import './Aboutme.css';
-import aboutMeImage1 from '../../images/aboutme.jpg'
-import aboutMeImage2 from '../../images/aboutme2.jpg'
-import aboutMeImage3 from '../../images/aboutme3.jpg'
+
+const images = [aboutMeImage1, aboutMeImage2, aboutMeImage3];
 
 const AboutMe = () => {
-    const [currentImage, setCurrentImage] = useState(0);
-    const images = [aboutMeImage1, aboutMeImage2, aboutMeImage3];
+  const { ui } = useLang();
+  const [current, setCurrent] = useState(0);
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-        }, 3000); // Change image every 5 seconds
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = setInterval(() => setCurrent((i) => (i + 1) % images.length), 3500);
+    return () => clearInterval(id);
+  }, []);
 
-        return () => clearInterval(intervalId);
-    });
-
-    return (
-        <section id='about'>
-            <div className="about-me-section">
-                <h1 className="about-me-title">About Me</h1>
-                <div className="about-me-content">
-                    <div className="about-me-image-container">
-                        <div className="about-me-image-wrapper">
-                            {images.map((img, index) => (
-                                <img
-                                    key={index}
-                                    src={img}
-                                    alt={`Abdenour Garti ${index + 1}`}
-                                    className={`about-me-image ${index === currentImage ? 'active' : ''}`}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                    <div className="about-me-text">
-                        <p>
-                        I am a software engineer currently working at M2I Services, while also operating as a freelance developer in both the Algerian and international markets. Specialized in Full Stack web development, I am dedicated to designing and creating modern, robust, and intuitive digital solutions that adhere to industry standards and best practices.
-
-                        As a recent graduate with a passion for web technologies, I stand out through my quick learning ability, seriousness, and reliability. I am constantly seeking new opportunities to expand my skills and tackle challenging technical problems, while adding value to the projects I work on.
-                        
-                        My goal is to create exceptional user experiences through high-performance and accessible web applications that perfectly meet the needs of clients and end users.
-                        </p>
-                    </div>
-                </div>
+  return (
+    <section id="about" className="section about">
+      <div className="container about-grid">
+        <Reveal className="about-media">
+          <div className="about-frame tilt" {...tilt}>
+            <div className="about-backdrop" aria-hidden="true" />
+            <div className="about-photos">
+              {images.map((img, index) => (
+                <img
+                  key={img}
+                  src={img}
+                  alt={index === current ? 'Abdenour Garti' : ''}
+                  className={index === current ? 'is-active' : ''}
+                />
+              ))}
             </div>
-        </section>
-    );
+            <p className="about-badge">
+              <HiOutlineMapPin aria-hidden="true" />
+              {ui.about.facts[0][1]}
+            </p>
+          </div>
+        </Reveal>
+
+        <div>
+          <Reveal className="section-head">
+            <h2>{ui.about.title}</h2>
+          </Reveal>
+          <Reveal className="about-text" delay={100}>
+            {ui.about.text.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </Reveal>
+          <Reveal as="dl" className="about-facts" delay={200}>
+            {ui.about.facts.map(([label, value], i) => (
+              <div key={i}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default AboutMe;

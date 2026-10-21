@@ -1,43 +1,83 @@
 import React from 'react';
+import { useLang } from '../../i18n';
+import Reveal from '../Reveal';
 import './Skills.css';
 
-const skillsData = [
-  { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-  { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-  { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-  { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-  { name: 'Oracle', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg' },
-  { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-  { name: 'C', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
-  { name: 'PHP', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
-  { name: 'Laravel', logo: 'https://cdn.worldvectorlogo.com/logos/laravel-2.svg' },
-  { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'TailwindCSS', logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
-  { name: 'Bootstrap', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-  { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-  { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-  { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
+const devicon = (name, variant = 'original') =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-${variant}.svg`;
+
+const skillGroups = [
+  {
+    key: 'frontend',
+    skills: [
+      { name: 'React', logo: devicon('react') },
+      { name: 'Next.js', logo: devicon('nextjs') },
+      { name: 'Vue.js', logo: devicon('vuejs') },
+      { name: 'JavaScript', logo: devicon('javascript') },
+      { name: 'HTML', logo: devicon('html5') },
+      { name: 'CSS', logo: devicon('css3') },
+      { name: 'TailwindCSS', logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+      { name: 'Bootstrap', logo: devicon('bootstrap') },
+    ],
+  },
+  {
+    key: 'backend',
+    skills: [
+      { name: 'Node.js', logo: devicon('nodejs') },
+      { name: 'Express.js', logo: devicon('express') },
+      { name: 'PHP', logo: devicon('php') },
+      { name: 'Laravel', logo: 'https://cdn.worldvectorlogo.com/logos/laravel-2.svg' },
+    ],
+  },
+  {
+    key: 'data',
+    skills: [
+      { name: 'MongoDB', logo: devicon('mongodb') },
+      { name: 'MySQL', logo: devicon('mysql') },
+      { name: 'Oracle', logo: devicon('oracle') },
+    ],
+  },
+  {
+    key: 'tools',
+    skills: [
+      { name: 'Java', logo: devicon('java') },
+      { name: 'C', logo: devicon('c') },
+      { name: 'Git', logo: devicon('git') },
+      { name: 'GitHub', logo: devicon('github') },
+      { name: 'WordPress', logo: devicon('wordpress', 'plain') },
+    ],
+  },
 ];
 
 const Skills = () => {
-    return (
-        <section id='skills' className="skills-section">
-            <h2 className="skills-title">My Skills</h2>
-            <div className="skills-grid">
-                {skillsData.map((skill, index) => (
-                    <div key={index} className="skill-item">
-                        <img src={skill.logo} alt={skill.name} className="skill-logo" />
-                        <p className="skill-name">{skill.name}</p>
-                    </div>
+  const { ui } = useLang();
+
+  return (
+    <section id="skills" className="section">
+      <div className="container">
+        <Reveal className="section-head">
+          <h2>{ui.skills.title}</h2>
+          <p>{ui.skills.lead}</p>
+        </Reveal>
+
+        <div className="skill-groups">
+          {skillGroups.map((group, i) => (
+            <Reveal key={group.key} className={`skill-group skill-group--${group.key}`} delay={i * 80}>
+              <h3>{ui.skills.cats[group.key]}</h3>
+              <ul>
+                {group.skills.map((skill) => (
+                  <li key={skill.name}>
+                    <img src={skill.logo} alt="" width="28" height="28" loading="lazy" />
+                    <span dir="ltr">{skill.name}</span>
+                  </li>
                 ))}
-            </div>
-        </section>
-    );
+              </ul>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Skills;
