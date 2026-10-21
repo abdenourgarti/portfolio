@@ -142,15 +142,14 @@ function Stage({ projects, onOpen }) {
   );
 }
 
-const HeroScene = ({ projects, onOpen, active }) => (
+const ProjectRing = ({ projects, onOpen, active }) => (
   <Canvas
-    className="hero-canvas"
     dpr={[1, 1.75]}
     camera={{ position: [0, 0, 9], fov: 38 }}
     frameloop={active ? 'always' : 'never'}
     style={{ touchAction: 'pan-y' }}
   >
-    <fog attach="fog" args={['#f5f8fc', 8.5, 14]} />
+    <fog attach="fog" args={['#ffffff', 8.5, 14]} />
     <ambientLight intensity={0.9} />
     <directionalLight position={[3, 6, 5]} intensity={1.6} />
     <Environment resolution={256}>
@@ -162,4 +161,4 @@ const HeroScene = ({ projects, onOpen, active }) => (
   </Canvas>
 );
 
-export default HeroScene;
+export default ProjectRing;

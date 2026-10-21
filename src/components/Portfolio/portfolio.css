@@ -2,6 +2,37 @@
   background: var(--white);
 }
 
+.projects-top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(16px, 4vw, 48px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.projects-top .section-head {
+  margin-bottom: 0;
+}
+
+.section-head .projects-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--blue);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.projects-hint svg {
+  flex: none;
+  font-size: 1.3rem;
+}
+
+.projects-ring {
+  height: clamp(340px, 40vw, 520px);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
@@ -30,8 +61,9 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* The screenshot floats above the card when it tilts. */
+/* The screenshot floats above the card when it tilts; clicks pass through to the card's button overlay. */
 .project-browser {
+  pointer-events: none;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--white);
@@ -161,4 +193,14 @@
   display: flex;
   justify-content: center;
   margin-top: clamp(32px, 5vw, 48px);
+}
+
+@media (max-width: 860px) {
+  .projects-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .projects-ring {
+    height: clamp(300px, 80vw, 440px);
+  }
 }

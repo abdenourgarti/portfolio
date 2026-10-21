@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import tekkolabLogo from '../../images/logo tekkolab.png';
 import m2iLogo from '../../images/m2i-logo.png';
 import freelanceLogo from '../../images/freelance.png';
 import { useLang } from '../../i18n';
+import { gsap, reducedMotion, scrubIn, useGSAP } from '../../scroll';
 import Reveal from '../Reveal';
 import './expérience.css';
 
@@ -128,9 +129,25 @@ const experiences = [
 
 const ExperienceSection = () => {
   const { ui, t } = useLang();
+  const section = useRef(null);
+
+  useGSAP(
+    () => {
+      scrubIn('.xp-item', { autoAlpha: 0, y: 80, z: -140, rotateX: 22, rotateY: -10 });
+      // The rail fills as you read down the timeline.
+      if (!reducedMotion) {
+        gsap.fromTo(
+          '.xp-list',
+          { '--fill': 0 },
+          { '--fill': 1, ease: 'none', scrollTrigger: { trigger: '.xp-list', start: 'top 70%', end: 'bottom 60%', scrub: true } }
+        );
+      }
+    },
+    { scope: section }
+  );
 
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section" ref={section}>
       <div className="container">
         <Reveal className="section-head">
           <h2>{ui.experience.title}</h2>
@@ -139,7 +156,7 @@ const ExperienceSection = () => {
 
         <ol className="xp-list">
           {experiences.map((xp, i) => (
-            <Reveal as="li" key={i} className="xp-item">
+            <li key={i} className="xp-item">
               <div className="xp-logo">
                 <img src={xp.logo} alt="" />
               </div>
@@ -158,7 +175,7 @@ const ExperienceSection = () => {
                   ))}
                 </ul>
               </article>
-            </Reveal>
+            </li>
           ))}
         </ol>
       </div>

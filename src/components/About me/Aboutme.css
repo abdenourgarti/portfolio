@@ -9,43 +9,59 @@
   gap: clamp(48px, 8vw, 110px);
 }
 
+/* The photos waiting behind can swing past the column: clip them at the page gutter. */
+.about-media {
+  overflow: clip;
+  overflow-clip-margin: var(--gutter);
+}
+
 .about-frame {
+  --r: min(140px, 28vw);
   position: relative;
   width: min(100%, 420px);
   aspect-ratio: 4 / 5;
   margin-inline: auto;
 }
 
-/* Layers sit at different depths, so the tilt shows real parallax. */
-.about-backdrop {
+.about-glow {
   position: absolute;
-  inset: 0;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(150deg, var(--blue), var(--sky));
-  transform: translate3d(22px, 22px, -60px) rotate(4deg);
+  inset: 4% -6%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(56, 189, 248, 0.45), rgba(31, 91, 255, 0.16) 55%, transparent);
+  transform: translateZ(-260px);
 }
 
-.about-photos {
+.about-ring {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Photos sit on a circle: rotateY(--a) moves one along it and the inverse turn keeps it facing us.
+   Matching transform lists interpolate function by function, so a change of --a is an orbit, not a slide. */
+.about-slide {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: 76%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: var(--radius-xl);
   background: var(--paper);
   box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  opacity: 0.8;
+  filter: blur(4px) saturate(0.8) brightness(0.96);
+  transform: translateZ(calc(var(--r) * -1)) rotateY(var(--a)) translateZ(var(--r)) rotateY(calc(var(--a) * -1))
+    rotateY(var(--face));
+  transition: transform 1.3s var(--ease-out), filter 1.3s, opacity 1.3s;
+  -webkit-user-drag: none;
 }
 
-.about-photos img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-.about-photos img.is-active {
+.about-slide.is-front {
+  cursor: default;
   opacity: 1;
+  filter: none;
 }
 
 .about-badge {

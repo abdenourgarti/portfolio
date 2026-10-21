@@ -2,9 +2,10 @@
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.05fr);
+  grid-template-areas: 'intro phone form';
   align-items: center;
-  gap: clamp(32px, 6vw, 72px);
+  gap: clamp(32px, 4vw, 48px);
   padding: clamp(28px, 6vw, 72px);
   overflow: hidden;
   border-radius: var(--radius-xl);
@@ -21,6 +22,10 @@
   background:
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.22) 1px, transparent 0) 0 0 / 26px 26px,
     radial-gradient(ellipse at 0% 100%, rgba(56, 189, 248, 0.55), transparent 60%);
+}
+
+.contact-intro {
+  grid-area: intro;
 }
 
 .contact-intro h2 {
@@ -88,6 +93,7 @@
 }
 
 .contact-form {
+  grid-area: form;
   display: grid;
   gap: 16px;
   padding: clamp(20px, 3.5vw, 36px);
@@ -164,8 +170,259 @@
   color: #a12121;
 }
 
+/* Phone: a 3D device that buzzes, gets picked up, and answers a new client. */
+.phone {
+  position: relative;
+  grid-area: phone;
+  display: grid;
+  place-items: center;
+  perspective: 1000px;
+}
+
+.phone-ring {
+  position: absolute;
+  width: 250px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  visibility: hidden;
+}
+
+.phone-device {
+  position: relative;
+  width: 200px;
+  aspect-ratio: 9 / 18.5;
+  padding: 9px;
+  border-radius: 36px;
+  background: linear-gradient(145deg, #1d2d4f, var(--ink));
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.14), 0 40px 60px -28px rgba(10, 26, 51, 0.75);
+  transform: rotateY(-16deg);
+}
+
+:root[dir='rtl'] .phone-device {
+  transform: rotateY(16deg);
+}
+
+.phone-screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  z-index: 3;
+  width: 68px;
+  height: 18px;
+  margin-left: -34px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.phone-notif {
+  position: absolute;
+  top: 34px;
+  inset-inline: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: var(--shadow-lg);
+  visibility: hidden;
+}
+
+.phone-notif > span:last-child {
+  min-width: 0;
+}
+
+.phone-notif small {
+  display: block;
+  overflow: hidden;
+  color: var(--slate);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.phone-app,
+.chat-avatar {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  font-size: 16px;
+}
+
+.phone-app {
+  border-radius: 9px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 36px 12px 10px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.chat-avatar {
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.chat-head b {
+  display: block;
+  font-size: 12.5px;
+}
+
+.chat-head small {
+  color: #16a34a;
+  font-size: 10.5px;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding: 12px 10px;
+}
+
+.chat-msg {
+  align-self: flex-start;
+  max-width: 85%;
+  padding: 8px 11px;
+  border-radius: 14px;
+  border-end-start-radius: 4px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-msg.is-me {
+  align-self: flex-end;
+  border-radius: 14px;
+  border-end-end-radius: 4px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.chat-stack {
+  display: grid;
+  justify-items: start;
+}
+
+.chat-stack > * {
+  grid-area: 1 / 1;
+}
+
+.chat-typing {
+  display: flex;
+  gap: 4px;
+  padding: 11px 12px;
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  visibility: hidden;
+}
+
+.chat-typing i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--slate);
+  animation: typing-dot 1s infinite;
+}
+
+.chat-typing i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chat-typing i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.chat-input {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin: 0 8px 12px;
+  padding: 6px;
+  padding-inline-start: 12px;
+  border-radius: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.chat-field {
+  flex: 1;
+  min-width: 0;
+  align-self: center;
+  font-size: 11.5px;
+}
+
+.chat-field:empty::before {
+  content: attr(data-placeholder);
+  color: var(--slate);
+}
+
+.chat-send {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 13px;
+}
+
+:root[dir='rtl'] .chat-send svg {
+  transform: scaleX(-1);
+}
+
+@keyframes typing-dot {
+  50% {
+    opacity: 0.25;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 1240px) {
+  .contact-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'intro form'
+      'phone form';
+  }
+}
+
 @media (max-width: 900px) {
   .contact-panel {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'intro'
+      'phone'
+      'form';
   }
 }
