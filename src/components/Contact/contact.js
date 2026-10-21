@@ -75,6 +75,10 @@ const Contact = () => {
               <input type="email" name="your-email" autoComplete="email" required />
             </label>
             <label>
+              <span>{ui.contact.tel}</span>
+              <input type="tel" name="phone" autoComplete="tel" inputMode="tel" dir="ltr" />
+            </label>
+            <label>
               <span>{ui.contact.message}</span>
               <textarea name="message" rows={5} required />
             </label>
