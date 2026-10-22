@@ -62,16 +62,16 @@ const projects = [
       ar: "موقع تعريفي لشركة Tetralis Solutions التي أنتمي إلى فريقها: تقديم الشركة وخدماتها ووسائل التواصل.",
     },
   },
-  // {
-  //   folder: 'projet19',
-  //   url: 'https://accessoires-by-jas.vercel.app/',
-  //   title: 'Accessoires by Jas',
-  //   description: {
-  //     fr: "Boutique en ligne dédiée à la vente d'accessoires en acier, avec un panneau d'administration pour la gestion des commandes, des produits et du suivi de la boutique. Projet réalisé en freelance avec Supabase.",
-  //     en: 'Online store selling steel accessories, with an admin panel to manage orders, products and day-to-day store operations. Freelance project built with Supabase.',
-  //     ar: 'متجر إلكتروني لبيع الإكسسوارات المصنوعة من الفولاذ، مع لوحة إدارة لتسيير الطلبات والمنتجات ومتابعة المتجر. مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.',
-  //   },
-  // },
+  {
+    folder: "projet19",
+    url: "https://accessoires-by-jas.vercel.app/",
+    title: "Accessoires by Jas",
+    description: {
+      fr: "Boutique en ligne dédiée à la vente d'accessoires en acier, avec un panneau d'administration pour la gestion des commandes, des produits et du suivi de la boutique. Projet réalisé en freelance avec Supabase.",
+      en: "Online store selling steel accessories, with an admin panel to manage orders, products and day-to-day store operations. Freelance project built with Supabase.",
+      ar: "متجر إلكتروني لبيع الإكسسوارات المصنوعة من الفولاذ، مع لوحة إدارة لتسيير الطلبات والمنتجات ومتابعة المتجر. مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.",
+    },
+  },
   // {
   //   folder: 'projet20',
   //   url: 'https://mirayaliss.vercel.app/fr',
