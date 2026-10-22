@@ -72,16 +72,16 @@ const projects = [
       ar: "متجر إلكتروني لبيع الإكسسوارات المصنوعة من الفولاذ، مع لوحة إدارة لتسيير الطلبات والمنتجات ومتابعة المتجر. مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.",
     },
   },
-  // {
-  //   folder: 'projet20',
-  //   url: 'https://mirayaliss.vercel.app/fr',
-  //   title: 'Mirayaliss',
-  //   description: {
-  //     fr: "Site vitrine d'un salon de beauté situé à El Achour, avec un espace d'administration pour la gestion des rendez-vous et des commandes de press-on nails. Projet réalisé en freelance avec Supabase.",
-  //     en: 'Showcase website for a beauty salon in El Achour, with an admin area to manage appointments and press-on nails orders. Freelance project built with Supabase.',
-  //     ar: 'موقع تعريفي لصالون تجميل يقع في الأبيار (العاشور)، مع فضاء إداري لتسيير المواعيد وطلبات الأظافر الاصطناعية (press-on nails). مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.',
-  //   },
-  // },
+  {
+    folder: "projet20",
+    url: "https://mirayaliss.vercel.app/fr",
+    title: "Mirayaliss",
+    description: {
+      fr: "Site vitrine d'un salon de beauté situé à El Achour, avec un espace d'administration pour la gestion des rendez-vous et des commandes de press-on nails. Projet réalisé en freelance avec Supabase.",
+      en: "Showcase website for a beauty salon in El Achour, with an admin area to manage appointments and press-on nails orders. Freelance project built with Supabase.",
+      ar: "موقع تعريفي لصالون تجميل يقع في الأبيار (العاشور)، مع فضاء إداري لتسيير المواعيد وطلبات الأظافر الاصطناعية (press-on nails). مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.",
+    },
+  },
   // {
   //   folder: 'projet21',
   //   url: 'https://os-tech-dz.vercel.app/',
