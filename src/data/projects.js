@@ -32,16 +32,16 @@ const projects = [
       ar: "منصة ويب للترويج للسياحة في الجزائر مع لوحة تحكم إدارية مركزية للتسيير الشامل للمحتويات والخدمات السياحية. تتيح الواجهة إدارة المرشدين المحليين، الجولات السياحية، الوجهات، الفنادق، المطاعم والفعاليات السياحية عبر مختلف الولايات، إضافة إلى المستخدمين والحسابات والمعلومات المرتبطة بالمؤسسات والأنشطة. تسهّل لوحة التحكم مراقبة البيانات وتحديث المعلومات والتحكم في المحتويات المنشورة، بما يضمن اتساقها وتثمين العرض السياحي الجزائري. أُنجز في M2I Services وتم نشره لدى Icosnet. التقنيات: Laravel، Filament، Vue.js.",
     },
   },
-  // {
-  //   folder: 'projet16',
-  //   url: null,
-  //   title: 'EvRP',
-  //   description: {
-  //     fr: "Plateforme web d'Évaluation des Risques Professionnels (EvRP) pour Sonatrach, destinée aux services HSE des unités et installations à l'échelle nationale. Elle permet d'identifier, d'évaluer et de suivre les risques professionnels liés aux activités et aux postes de travail, avec une gestion multi-rôles, des workflows de validation et des notifications automatisées. Un module de plans d'action permet de définir les mesures préventives et correctives, d'affecter les responsabilités et de suivre l'avancement. Des tableaux de bord facilitent le pilotage des évaluations et le suivi des indicateurs HSE, et un module de gestion des référentiels harmonise les données et les méthodes d'évaluation au sein de Sonatrach. Réalisé chez M2I Services et déployé sur les serveurs locaux de Sonatrach. Technologies : Laravel, Vue.js.",
-  //     en: 'Occupational Risk Assessment (EvRP) web platform for Sonatrach, designed for the HSE departments of units and facilities nationwide. It identifies, assesses and tracks occupational risks related to activities and workstations, with multi-role management, validation workflows and automated notifications. An action plan module defines preventive and corrective measures, assigns responsibilities and tracks progress. Dashboards support the steering of assessments and HSE indicator monitoring, and a reference data module harmonises data and assessment methods across Sonatrach. Built at M2I Services and deployed on Sonatrach local servers. Technologies: Laravel, Vue.js.',
-  //     ar: 'منصة ويب لتقييم المخاطر المهنية (EvRP) لصالح سوناطراك، موجهة لمصالح الصحة والسلامة والبيئة (HSE) بالوحدات والمنشآت على المستوى الوطني. تتيح تحديد المخاطر المهنية المرتبطة بالأنشطة ومناصب العمل وتقييمها ومتابعتها، مع إدارة متعددة الأدوار ومسارات اعتماد وإشعارات آلية. يتيح مديول خطط العمل تحديد التدابير الوقائية والتصحيحية وإسناد المسؤوليات ومتابعة التقدم. وتساعد لوحات القيادة على توجيه التقييمات ومتابعة مؤشرات HSE، كما يضمن مديول المراجع توحيد البيانات وطرق التقييم داخل سوناطراك. أُنجز في M2I Services وتم نشره على الخوادم المحلية لسوناطراك. التقنيات: Laravel، Vue.js.',
-  //   },
-  // },
+  {
+    folder: "projet16",
+    url: null,
+    title: "EvRP",
+    description: {
+      fr: "Plateforme web d'Évaluation des Risques Professionnels (EvRP) pour Sonatrach, destinée aux services HSE des unités et installations à l'échelle nationale. Elle permet d'identifier, d'évaluer et de suivre les risques professionnels liés aux activités et aux postes de travail, avec une gestion multi-rôles, des workflows de validation et des notifications automatisées. Un module de plans d'action permet de définir les mesures préventives et correctives, d'affecter les responsabilités et de suivre l'avancement. Des tableaux de bord facilitent le pilotage des évaluations et le suivi des indicateurs HSE, et un module de gestion des référentiels harmonise les données et les méthodes d'évaluation au sein de Sonatrach. Réalisé chez M2I Services et déployé sur les serveurs locaux de Sonatrach. Technologies : Laravel, Vue.js.",
+      en: "Occupational Risk Assessment (EvRP) web platform for Sonatrach, designed for the HSE departments of units and facilities nationwide. It identifies, assesses and tracks occupational risks related to activities and workstations, with multi-role management, validation workflows and automated notifications. An action plan module defines preventive and corrective measures, assigns responsibilities and tracks progress. Dashboards support the steering of assessments and HSE indicator monitoring, and a reference data module harmonises data and assessment methods across Sonatrach. Built at M2I Services and deployed on Sonatrach local servers. Technologies: Laravel, Vue.js.",
+      ar: "منصة ويب لتقييم المخاطر المهنية (EvRP) لصالح سوناطراك، موجهة لمصالح الصحة والسلامة والبيئة (HSE) بالوحدات والمنشآت على المستوى الوطني. تتيح تحديد المخاطر المهنية المرتبطة بالأنشطة ومناصب العمل وتقييمها ومتابعتها، مع إدارة متعددة الأدوار ومسارات اعتماد وإشعارات آلية. يتيح مديول خطط العمل تحديد التدابير الوقائية والتصحيحية وإسناد المسؤوليات ومتابعة التقدم. وتساعد لوحات القيادة على توجيه التقييمات ومتابعة مؤشرات HSE، كما يضمن مديول المراجع توحيد البيانات وطرق التقييم داخل سوناطراك. أُنجز في M2I Services وتم نشره على الخوادم المحلية لسوناطراك. التقنيات: Laravel، Vue.js.",
+    },
+  },
   // {
   //   folder: 'projet17',
   //   url: null,
