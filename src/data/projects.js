@@ -82,26 +82,26 @@ const projects = [
       ar: "موقع تعريفي لصالون تجميل يقع في الأبيار (العاشور)، مع فضاء إداري لتسيير المواعيد وطلبات الأظافر الاصطناعية (press-on nails). مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.",
     },
   },
-  // {
-  //   folder: 'projet21',
-  //   url: 'https://os-tech-dz.vercel.app/',
-  //   title: 'OS-Tech',
-  //   description: {
-  //     fr: 'Boutique en ligne de vente de smartphones et de leurs accessoires : catalogue, panier et commande. Projet réalisé en freelance avec Supabase.',
-  //     en: 'Online store selling smartphones and their accessories: catalogue, cart and ordering. Freelance project built with Supabase.',
-  //     ar: 'متجر إلكتروني لبيع الهواتف الذكية وملحقاتها: كتالوج، سلة مشتريات وطلب الشراء. مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.',
-  //   },
-  // },
-  // {
-  //   folder: 'projet22',
-  //   url: 'https://dark-furniture.vercel.app/fr',
-  //   title: 'Dark Furniture',
-  //   description: {
-  //     fr: "Site vitrine d'un showroom de meubles sur mesure situé à Bouira : présentation des réalisations et prise de contact. Projet réalisé en freelance.",
-  //     en: 'Showcase website for a custom furniture showroom in Bouira: portfolio of creations and contact. Freelance project.',
-  //     ar: 'موقع تعريفي لمعرض أثاث حسب الطلب يقع في البويرة: عرض الإنجازات ووسائل التواصل. مشروع مُنجز بصفة مستقلة (Freelance).',
-  //   },
-  // },
+  {
+    folder: "projet21",
+    url: "https://os-tech-dz.vercel.app/",
+    title: "OS-Tech",
+    description: {
+      fr: "Boutique en ligne de vente de smartphones et de leurs accessoires : catalogue, panier et commande. Projet réalisé en freelance avec Supabase.",
+      en: "Online store selling smartphones and their accessories: catalogue, cart and ordering. Freelance project built with Supabase.",
+      ar: "متجر إلكتروني لبيع الهواتف الذكية وملحقاتها: كتالوج، سلة مشتريات وطلب الشراء. مشروع مُنجز بصفة مستقلة (Freelance) باستخدام Supabase.",
+    },
+  },
+  {
+    folder: "projet22",
+    url: "https://dark-furniture.vercel.app/fr",
+    title: "Dark Furniture",
+    description: {
+      fr: "Site vitrine d'un showroom de meubles sur mesure situé à Bouira : présentation des réalisations et prise de contact. Projet réalisé en freelance.",
+      en: "Showcase website for a custom furniture showroom in Bouira: portfolio of creations and contact. Freelance project.",
+      ar: "موقع تعريفي لمعرض أثاث حسب الطلب يقع في البويرة: عرض الإنجازات ووسائل التواصل. مشروع مُنجز بصفة مستقلة (Freelance).",
+    },
+  },
   {
     folder: "projet1",
     url: "https://lieupropre.ca/",
