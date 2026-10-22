@@ -52,16 +52,16 @@ const projects = [
       ar: "منصة ويب لتسيير حظيرة سيارات سوناطراك (PARC-AUTO)، تغطي كامل دورة حياة المركبات والأنشطة المرتبطة بها. تضم عدة مديولات: المركبات والسائقين، طلبات التنقل، نقل المستخدمين، الصيانة، العقود مع المقاولين، التأمينات، القسيمة، إخراج المركبات من الخدمة وغيرها. تركّز البيانات وتتابع العمليات وتدير الآجال الإدارية والتقنية للحظيرة. ومع إدارة متعددة الأدوار ومسارات معالجة وإشعارات وتنبيهات آلية ولوحات قيادة مخصصة حسب الصلاحيات، تساهم المنصة في تحسين التتبع والمتابعة العملياتية والتحكم في الممتلكات من المركبات لدى سوناطراك. أُنجز في M2I Services وتم نشره على الخوادم المحلية لسوناطراك. التقنيات: Laravel، Vue.js.",
     },
   },
-  // {
-  //   folder: 'projet18',
-  //   url: 'https://tetralis-solutions.com/',
-  //   title: 'Tetralis Solutions',
-  //   description: {
-  //     fr: "Site vitrine de Tetralis Solutions, société dont je fais partie de l'équipe : présentation de l'entreprise, de ses services et prise de contact.",
-  //     en: 'Showcase website for Tetralis Solutions, the company whose team I am part of: company presentation, services and contact.',
-  //     ar: 'موقع تعريفي لشركة Tetralis Solutions التي أنتمي إلى فريقها: تقديم الشركة وخدماتها ووسائل التواصل.',
-  //   },
-  // },
+  {
+    folder: "projet18",
+    url: "https://tetralis-solutions.com/",
+    title: "Tetralis Solutions",
+    description: {
+      fr: "Site vitrine de Tetralis Solutions, société dont je fais partie de l'équipe : présentation de l'entreprise, de ses services et prise de contact.",
+      en: "Showcase website for Tetralis Solutions, the company whose team I am part of: company presentation, services and contact.",
+      ar: "موقع تعريفي لشركة Tetralis Solutions التي أنتمي إلى فريقها: تقديم الشركة وخدماتها ووسائل التواصل.",
+    },
+  },
   // {
   //   folder: 'projet19',
   //   url: 'https://accessoires-by-jas.vercel.app/',
