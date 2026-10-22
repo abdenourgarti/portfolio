@@ -42,16 +42,16 @@ const projects = [
       ar: "منصة ويب لتقييم المخاطر المهنية (EvRP) لصالح سوناطراك، موجهة لمصالح الصحة والسلامة والبيئة (HSE) بالوحدات والمنشآت على المستوى الوطني. تتيح تحديد المخاطر المهنية المرتبطة بالأنشطة ومناصب العمل وتقييمها ومتابعتها، مع إدارة متعددة الأدوار ومسارات اعتماد وإشعارات آلية. يتيح مديول خطط العمل تحديد التدابير الوقائية والتصحيحية وإسناد المسؤوليات ومتابعة التقدم. وتساعد لوحات القيادة على توجيه التقييمات ومتابعة مؤشرات HSE، كما يضمن مديول المراجع توحيد البيانات وطرق التقييم داخل سوناطراك. أُنجز في M2I Services وتم نشره على الخوادم المحلية لسوناطراك. التقنيات: Laravel، Vue.js.",
     },
   },
-  // {
-  //   folder: 'projet17',
-  //   url: null,
-  //   title: 'PARC-AUTO',
-  //   description: {
-  //     fr: "Plateforme web de gestion du PARC-AUTO de Sonatrach, couvrant l'ensemble du cycle de vie des véhicules et des activités associées. Elle intègre plusieurs modules : véhicules et chauffeurs, demandes de déplacement, transport du personnel, entretien et maintenance, contrats avec les prestataires, assurances, vignettes, mise à la réforme des véhicules, etc. Elle centralise les données, suit les opérations et gère les échéances administratives et techniques du parc. Gestion multi-rôles, workflows de traitement, notifications et alertes automatisées, ainsi que des tableaux de bord personnalisés selon les profils, contribuent à améliorer la traçabilité, le suivi opérationnel et la maîtrise du patrimoine automobile de Sonatrach. Réalisé chez M2I Services et déployé sur les serveurs locaux de Sonatrach. Technologies : Laravel, Vue.js.",
-  //     en: "Web platform for managing Sonatrach's vehicle fleet (PARC-AUTO), covering the full vehicle lifecycle and related activities. It includes several modules: vehicles and drivers, travel requests, staff transport, servicing and maintenance, supplier contracts, insurance, vehicle tax stickers, vehicle decommissioning, and more. It centralises data, tracks operations and manages the fleet's administrative and technical deadlines. Multi-role management, processing workflows, automated notifications and alerts, and role-based dashboards improve traceability, operational follow-up and control of Sonatrach's vehicle assets. Built at M2I Services and deployed on Sonatrach local servers. Technologies: Laravel, Vue.js.",
-  //     ar: 'منصة ويب لتسيير حظيرة سيارات سوناطراك (PARC-AUTO)، تغطي كامل دورة حياة المركبات والأنشطة المرتبطة بها. تضم عدة مديولات: المركبات والسائقين، طلبات التنقل، نقل المستخدمين، الصيانة، العقود مع المقاولين، التأمينات، القسيمة، إخراج المركبات من الخدمة وغيرها. تركّز البيانات وتتابع العمليات وتدير الآجال الإدارية والتقنية للحظيرة. ومع إدارة متعددة الأدوار ومسارات معالجة وإشعارات وتنبيهات آلية ولوحات قيادة مخصصة حسب الصلاحيات، تساهم المنصة في تحسين التتبع والمتابعة العملياتية والتحكم في الممتلكات من المركبات لدى سوناطراك. أُنجز في M2I Services وتم نشره على الخوادم المحلية لسوناطراك. التقنيات: Laravel، Vue.js.',
-  //   },
-  // },
+  {
+    folder: "projet17",
+    url: null,
+    title: "PARC-AUTO",
+    description: {
+      fr: "Plateforme web de gestion du PARC-AUTO de Sonatrach, couvrant l'ensemble du cycle de vie des véhicules et des activités associées. Elle intègre plusieurs modules : véhicules et chauffeurs, demandes de déplacement, transport du personnel, entretien et maintenance, contrats avec les prestataires, assurances, vignettes, mise à la réforme des véhicules, etc. Elle centralise les données, suit les opérations et gère les échéances administratives et techniques du parc. Gestion multi-rôles, workflows de traitement, notifications et alertes automatisées, ainsi que des tableaux de bord personnalisés selon les profils, contribuent à améliorer la traçabilité, le suivi opérationnel et la maîtrise du patrimoine automobile de Sonatrach. Réalisé chez M2I Services et déployé sur les serveurs locaux de Sonatrach. Technologies : Laravel, Vue.js.",
+      en: "Web platform for managing Sonatrach's vehicle fleet (PARC-AUTO), covering the full vehicle lifecycle and related activities. It includes several modules: vehicles and drivers, travel requests, staff transport, servicing and maintenance, supplier contracts, insurance, vehicle tax stickers, vehicle decommissioning, and more. It centralises data, tracks operations and manages the fleet's administrative and technical deadlines. Multi-role management, processing workflows, automated notifications and alerts, and role-based dashboards improve traceability, operational follow-up and control of Sonatrach's vehicle assets. Built at M2I Services and deployed on Sonatrach local servers. Technologies: Laravel, Vue.js.",
+      ar: "منصة ويب لتسيير حظيرة سيارات سوناطراك (PARC-AUTO)، تغطي كامل دورة حياة المركبات والأنشطة المرتبطة بها. تضم عدة مديولات: المركبات والسائقين، طلبات التنقل، نقل المستخدمين، الصيانة، العقود مع المقاولين، التأمينات، القسيمة، إخراج المركبات من الخدمة وغيرها. تركّز البيانات وتتابع العمليات وتدير الآجال الإدارية والتقنية للحظيرة. ومع إدارة متعددة الأدوار ومسارات معالجة وإشعارات وتنبيهات آلية ولوحات قيادة مخصصة حسب الصلاحيات، تساهم المنصة في تحسين التتبع والمتابعة العملياتية والتحكم في الممتلكات من المركبات لدى سوناطراك. أُنجز في M2I Services وتم نشره على الخوادم المحلية لسوناطراك. التقنيات: Laravel، Vue.js.",
+    },
+  },
   // {
   //   folder: 'projet18',
   //   url: 'https://tetralis-solutions.com/',
