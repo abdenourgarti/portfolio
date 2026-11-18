@@ -12,6 +12,7 @@
   position: absolute;
   inset-block: 28px;
   inset-inline-start: 27px;
+  z-index: 0;
   width: 2px;
   background: var(--line);
 }
@@ -24,7 +25,10 @@
   scale: 1 var(--fill, 1);
 }
 
+/* Above the rail, so the line passes behind the logos. */
 .xp-item {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
   gap: clamp(16px, 3vw, 32px);
